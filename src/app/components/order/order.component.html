@@ -1,0 +1,51 @@
+<section fxLayout="row wrap" fxLayoutAlign="center center">
+  <mat-card fxFlex="1600px" fxLayoutGap="10px" fxFlex.xs="100%">
+    <mat-card-title>Submit Order</mat-card-title>
+    <h2>Order Details</h2>
+
+    <form [formGroup]="orderForm" autocomplete="off"  (ngSubmit)="submitOrder(orderForm.value)" fxLayout="column wrap"
+      fxLayoutAlign="center center" fxLayoutGap="10px">
+        <mat-card-content>
+          <mat-form-field appearance="outline">
+            <mat-label>Partition Key</mat-label>
+            <input matInput placeholder="Placeholder" formControlName="PK">
+            <mat-hint>PK</mat-hint>
+          </mat-form-field>
+
+          <mat-form-field appearance="outline">
+            <mat-label>Sort Key</mat-label>
+            <input matInput placeholder="Placeholder" formControlName="SK">
+            <mat-hint>SK</mat-hint>
+          </mat-form-field>
+
+          <mat-form-field appearance="outline">
+            <mat-label>address</mat-label>
+            <input matInput placeholder="Placeholder" formControlName="address">
+            <mat-hint>Delivery Address</mat-hint>
+          </mat-form-field>
+
+          <mat-form-field appearance="outline">
+            <mat-label>Entity Type</mat-label>
+            <input matInput placeholder="Placeholder" formControlName="EntityType">
+            <mat-hint>EntityType</mat-hint>
+          </mat-form-field>
+
+          <mat-form-field appearance="outline">
+            <mat-label>Order Date</mat-label>
+            <input matInput [matDatepicker]="picker" placeholder="Date the order is placed" formControlName="Date" id="Date"
+              readonly (click)="picker.open()">
+            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+            <mat-hint>select date</mat-hint>
+          </mat-form-field>
+
+        </mat-card-content>
+        <mat-card-actions fx-item-align="center">
+          <button mat-raised-button color="primary" [disabled]="!orderForm.valid">Submit</button>
+          <button type="button" mat-raised-button color="warn" (click)="onCancel()">Cancel</button>
+        </mat-card-actions>
+
+    </form>
+  </mat-card>
+
+</section>
