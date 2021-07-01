@@ -1,0 +1,15 @@
+<mat-sidenav-container autosize>
+  <mat-sidenav #sidenav mode="over" role="navigation">
+    <mat-nav-list>
+      <ng-container>
+        <h2>My Header</h2>
+      </ng-container>
+
+    </mat-nav-list>
+  </mat-sidenav>
+
+  <mat-sidenav-content>
+    <app-top-nav (toggleSideNav)="sidenav.toggle()"></app-top-nav>
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>

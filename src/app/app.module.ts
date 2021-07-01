@@ -9,14 +9,29 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './material/material.module';
 import { environment } from 'src/environments/environment';
 import { BASE_URL } from './tokens';
-import { LayoutComponent } from './components/layout/layout.component';
 import { OrderComponent } from './components/order/order.component';
+import { HomeComponent } from './components/home/home.component';
+import { OrderSearchComponent } from './components/order-search/order-search.component';
+import { RegisterComponent } from './components/register/register.component';
+import { MDBBootstrapModule } from 'angular-bootstrap-md';
+import { CourseListComponent } from './components/course-list/course-list.component';
+import { HighlightDirective } from './highlight.directive';
+import { MenuListItemComponent } from './components/menu-list-item/menu-list-item.component';
+import { TopNavComponent } from './components/top-nav/top-nav.component';
+import { NavComponent } from './components/nav/nav.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    LayoutComponent,
-    OrderComponent
+    OrderComponent,
+    HomeComponent,
+    OrderSearchComponent,
+    RegisterComponent,
+    CourseListComponent,
+    HighlightDirective,
+    MenuListItemComponent,
+    TopNavComponent,
+    NavComponent
   ],
   imports: [
     HttpClientModule,
@@ -25,7 +40,8 @@ import { OrderComponent } from './components/order/order.component';
     ReactiveFormsModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    MaterialModule
+    MaterialModule,
+    MDBBootstrapModule.forRoot()
   ],
   providers: [
     { provide: 'BASE_URL', useValue: environment.apiRoot }
