@@ -19,6 +19,7 @@ import { MatNativeDateModule } from '@angular/material/core';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatTabsModule } from '@angular/material/tabs';
 import { MatSortModule } from '@angular/material/sort';
+import { MatExpansionModule } from '@angular/material/expansion';
 
 @NgModule({
   imports: [
@@ -43,8 +44,8 @@ import { MatSortModule } from '@angular/material/sort';
     MatDatepickerModule,
     MatNativeDateModule,
     MatTabsModule,
-    MatSortModule
-
+    MatSortModule,
+    MatExpansionModule
 
   ],
   exports: [
@@ -69,7 +70,8 @@ import { MatSortModule } from '@angular/material/sort';
     MatDatepickerModule,
     MatNativeDateModule,
     MatTabsModule,
-    MatSortModule
+    MatSortModule,
+    MatExpansionModule
   ],
   providers: [
     { provide: MatDialogRef, useValue: {} },

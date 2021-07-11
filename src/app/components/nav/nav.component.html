@@ -1,15 +1,40 @@
 <mat-sidenav-container autosize>
   <mat-sidenav #sidenav mode="over" role="navigation">
-    <mat-nav-list>
-      <ng-container>
-        <h2>My Header</h2>
-      </ng-container>
-
+    <!--
+      <mat-icon>
+      {{ isExpanded ? "keyboard_backspace" : "" }}
+    </mat-icon>
+    -->
+    <mat-nav-list *ngFor="let route of loginLinks">
+      <a
+        mat-list-item
+        routerLinkActive="active-link"
+        class="hover"
+        routerLink="{{ route.link }}"
+        >
+        <p matLine *ngIf="isExpanded">{{ route.name }}</p>
+      </a>
     </mat-nav-list>
+
+    <mat-divider></mat-divider>
+
+    <mat-nav-list *ngFor="let route of routeLinks">
+      <a
+        mat-list-item
+        routerLinkActive="active-link"
+        class="hover"
+        routerLink="{{ route.link }}"
+        >
+        <p matLine *ngIf="isExpanded">{{ route.name }}</p>
+      </a>
+    </mat-nav-list>
+
+
+
   </mat-sidenav>
 
   <mat-sidenav-content>
-    <app-top-nav (toggleSideNav)="sidenav.toggle()"></app-top-nav>
+    <app-top-nav (toggleSideNav)="sidenav.toggle()" (isExpanded)="getExpansionValue($event)"></app-top-nav>
     <router-outlet></router-outlet>
   </mat-sidenav-content>
 </mat-sidenav-container>

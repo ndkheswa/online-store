@@ -10,7 +10,6 @@ import { MaterialModule } from './material/material.module';
 import { environment } from 'src/environments/environment';
 import { BASE_URL } from './tokens';
 import { OrderComponent } from './components/order/order.component';
-import { HomeComponent } from './components/home/home.component';
 import { OrderSearchComponent } from './components/order-search/order-search.component';
 import { RegisterComponent } from './components/register/register.component';
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
@@ -19,19 +18,22 @@ import { HighlightDirective } from './highlight.directive';
 import { MenuListItemComponent } from './components/menu-list-item/menu-list-item.component';
 import { TopNavComponent } from './components/top-nav/top-nav.component';
 import { NavComponent } from './components/nav/nav.component';
+import { HomeComponent } from './components/home/home.component';
+import { CardsComponent } from './components/cards/cards.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     OrderComponent,
-    HomeComponent,
     OrderSearchComponent,
     RegisterComponent,
     CourseListComponent,
     HighlightDirective,
     MenuListItemComponent,
     TopNavComponent,
-    NavComponent
+    NavComponent,
+    HomeComponent,
+    CardsComponent
   ],
   imports: [
     HttpClientModule,
