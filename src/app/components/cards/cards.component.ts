@@ -6,11 +6,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CardsComponent implements OnInit {
 
-  panelOpenState: boolean;
+  panelOpenState = true;
   constructor() { }
 
   ngOnInit(): void {
-    this.panelOpenState = true;
+
   }
 
 }
