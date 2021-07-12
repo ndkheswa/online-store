@@ -46,7 +46,6 @@ import { MatExpansionModule } from '@angular/material/expansion';
     MatTabsModule,
     MatSortModule,
     MatExpansionModule
-
   ],
   exports: [
     FlexLayoutModule,

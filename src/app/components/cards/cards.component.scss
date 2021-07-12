@@ -1,16 +1,52 @@
 .main-container {
   display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.banner {
+  background-image: url('../../../assets/vladimir-yelizarov-BFxHJAGwteQ-unsplash.jpg');
+  background-size:cover;
+  background-position: 50% 15%;
+  height: 200px;
+  width: 90%;
+  background-repeat: no-repeat;
+
+}
+
+h2 {
+  position: relative;
+  left: 20px;
+}
+
+hr {
+  margin:  40px 0px;
+  color: #7E00E4;
+  width: 90%;
+}
+
+.acc {
+  width: 90%;
+
+}
+
+.categories {
+  display: flex;
   overflow-x: auto;
 }
 
+@media screen and (max-width: 600px) {
+  .banner {
+    width: 100%;
+    height: 180px;
+  }
+}
+
 mat-card {
-  margin-top: 40px;
-  padding-top: 40px;
   display: flex;
   justify-content: flex-start;
   flex-direction: row;
-  justify-content: space-around;
-  border: #D5D7C3 1px solid;
+  border: #C8C8C8 1px solid;
 }
 
 .main-container::-webkit-scrollbar {

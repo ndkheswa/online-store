@@ -12,7 +12,6 @@ export class AppComponent {
 
   isAuthenticated = false;
 
-
   constructor(private navService: NavService) { }
 
   ngOnInit(): void {
