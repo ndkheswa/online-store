@@ -20,6 +20,8 @@ import { TopNavComponent } from './components/top-nav/top-nav.component';
 import { NavComponent } from './components/nav/nav.component';
 import { HomeComponent } from './components/home/home.component';
 import { CardsComponent } from './components/cards/cards.component';
+import { FooterComponent } from './components/footer/footer.component';
+import { GetStartedComponent } from './components/get-started/get-started.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +35,9 @@ import { CardsComponent } from './components/cards/cards.component';
     TopNavComponent,
     NavComponent,
     HomeComponent,
-    CardsComponent
+    CardsComponent,
+    FooterComponent,
+    GetStartedComponent
   ],
   imports: [
     HttpClientModule,
