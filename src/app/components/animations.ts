@@ -13,3 +13,4 @@ export let fadeIn = trigger('fadeIn', [
         animate(2000)
     ])
 ])
+

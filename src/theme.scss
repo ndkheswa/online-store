@@ -3,7 +3,7 @@
 @import 'palettes';
 
 $custom-typography: mat-typography-config(
-  $font-family: 'Nunito'
+  $font-family: 'Montserrat'
 );
 
 @include mat-core($custom-typography);

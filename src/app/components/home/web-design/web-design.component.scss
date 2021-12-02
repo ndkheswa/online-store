@@ -1,104 +1,194 @@
 .main-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  background-color: #1434CB;
+
+  .header {
     display: flex;
     flex-direction: column;
     align-items: center;
-    position: relative;
-    background-color: #1434CB;
-    height: 600px;
-      .full-content {
-        width: 90%;
+    width: 50%;
+    h2 {
+      display: flex;
+      align-items: center;
+      font-weight: 600;
+      font-size:16px;
+      //color: #333809;
+      color: #fff;
+      margin-bottom: 40px;
+      margin-top: 40px;
+    }
+    h1 {
+      display: flex;
+      align-items: center;
+      font-weight: 700;
+      font-size:50px;
+      //color: #333809;
+      color: #fff;
+      margin-bottom: 60px;
+    }
+    button {
+      display: flex;
+      background-color: #F7B600;
+      padding: 10px 30px;
+      justify-content: center;
+      color: #021E4C;
+      width: 220px;
+      font-size: 18px;
+      font-weight: 400;
+      border-radius: 0%;
+      margin-bottom: 60px;
+      .arrow {
+        border: solid #021E4C;
+        border-width: 0 2px 2px 0;
+        display: inline-block;
+        padding: 4px;
+        margin-left: 10px;
+        transform: rotate(-45deg);
+        -webkit-transform: rotate(-45deg);
+      }
+    }
+    button:hover {
+      opacity: 0.8;
+    }
+  }
+
+  .full-content {
+    display: flex;
+    width: 80%;
+    display: flex;
+    .web-design-text {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      h2 {
         display: flex;
-        flex-direction: row;
-        img {
-          width: 35%;
-          margin: 60px 60px 60px 0px;
+        width: 50%;
+        align-items: center;
+        font-weight: 500;
+        font-size:16px;
+        //color: #333809;
+        color: #fff;
+        margin-bottom: 0;
+      }
+      p {
+        display: flex;
+        width: 80%;
+        align-items: flex-start;
+        font-weight: 200;
+        font-size:16px;
+        color: #fff;
+        margin-bottom: 30px;
+        .arrow {
+          border: solid #F7B600;
+          border-width: 0 2px 2px 0;
+          display: inline-block;
+          padding: 4px;
+          margin-left: 10px;
+          transform: rotate(-45deg);
+          -webkit-transform: rotate(-45deg);
         }
-        .web-design-text {
-          width: 100%;
-          display: flex;
-          flex-direction: column;
-          justify-content: center;;
-          //border: red 1px solid;
-          h2 {
-            display: flex;
-            width: 50%;
-            align-items: center;
-            font-weight: 700;
-            font-size:25px;
-            //color: #333809;
-            color: #fff;
-          }
-      
-          p {
-            display: flex;
-            width: 80%;
-            align-items: flex-start;
-            font-weight: 600;
-            font-size:18px;
-            color: #fff;
-            margin-bottom: 20px;
-          }
-          
-          button {
-            display: flex;
-            background-color: #F7B600;
-            padding: 10px 30px;
-            justify-content: center;
-            color: #021E4C;
-            width: 220px;
-            font-size: 18px;
-            font-weight: 400;
-            border-radius: 0%;
-            .arrow {
-              border: solid #021E4C;
-              border-width: 0 2px 2px 0;
-              display: inline-block;
-              padding: 4px;
-              margin-left: 10px;
-              transform: rotate(-45deg);
-              -webkit-transform: rotate(-45deg);
-            }
-          }
-          
-          button:hover {
-            opacity: 0.8;
-          }
+      } 
+    }
+    .web-design-text:hover {
+      cursor: pointer;
+      opacity: 0.8;
+    }
+  }
+
+  @media screen and (max-width: 600px) {
+    .header {
+      display: flex;
+      align-items: center;
+      width: 100%;
+      h2 {
+        display: flex;
+        font-weight: 400;
+        font-size:18px;
+        //color: #333809;
+        color: #fff;
+        text-align: center;
+        margin-bottom: 20px;
+      }
+      h1 {
+        display: flex;
+        font-weight: 700;
+        font-size:25px;
+        //color: #333809;
+        color: #fff;
+        text-align: center;
+        margin-bottom: 20px;
+      }
+      button {
+        display: flex;
+        background-color: #F7B600;
+        padding: 10px 30px;
+        color: #021E4C;
+        width: 220px;
+        font-size: 18px;
+        font-weight: 400;
+        border-radius: 0%;
+        margin-bottom: 40px;
+        .arrow {
+          border: solid #021E4C;
+          border-width: 0 2px 2px 0;
+          display: inline-block;
+          padding: 4px;
+          margin-left: 10px;
+          transform: rotate(-45deg);
+          -webkit-transform: rotate(-45deg);
         }
-        
+      }
+      button:hover {
+        opacity: 0.8;
+      }
     }
 
-    @media screen and (max-width: 600px) {
-        .full-content {
-          display: flex;
-          flex-direction: column;
-          width: 100%;
-          height: 100%;
-          background-color: #1E1E1E;
-          img {
-            display: flex;
-            width: 100%;
-            margin-top: 0;
-            margin-bottom: 30px;
-          }
-          .web-design-text {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            width: 100%;
-            h2 {
-              width: 100%;
-              justify-content: center;
-            }
-            p {
-              text-align: center;
-            }
-      
-            button {
-              width: 100%;
-              margin-bottom: 40px;
-            }
-          }
-        }
-      
+    .full-content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+      height: 100%;
+      h2 {
+        display: flex;
+        width: 100%;
+        font-weight: 400;
+        font-size:18px;
+        //color: #333809;
+        color: #fff;
       }
+      h1 {
+        display: flex;
+        width: 60%;
+        font-weight: 700;
+        font-size:25px;
+        //color: #333809;
+        color: #fff;
+      }
+      display: flex;
+      flex-direction: column;
+      
+      .web-design-text {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        width: 90%;
+        h2 {
+          width: 60%;
+        }
+        p {
+          width: 90%;
+        }
+        
+        button {
+          width: 100%;
+          margin-bottom: 40px;
+        }
+      }
+    }
+  }
 }

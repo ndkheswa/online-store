@@ -24,4 +24,8 @@ export class AppComponent {
   logout() {
     // not implemented
   }
+
+  onScroll(event) {
+
+  }
 }

@@ -27,12 +27,12 @@
         </li>
         
         <li fxHide.xs>
-          <button mat-icon-button>
+          <button mat-icon-button *ngIf="isAuthenticated">
             <mat-icon class="material-icons-outlined"> shopping_cart </mat-icon>
           </button>
         </li>
         <li fxHide.xs>
-          <button mat-icon-button>
+          <button mat-icon-button *ngIf="isAuthenticated">
             <mat-icon>person_outline</mat-icon>
           </button>
         </li>
