@@ -1,0 +1,39 @@
+.main-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    color: #2C2C2C;
+    background-color: #fff;
+    .level-2 {
+        width: 90%;
+        h2 {
+            top: 50%;
+            transform: translateY(50%);
+            position: relative;
+            font-size:26px;
+            font-weight: 700;
+            width: 40%;
+        }
+        
+        p {
+            font-size:22px;
+            line-height: 1em;
+        }
+    }
+
+    @media screen and (min-width: 840px) {
+        .level-2 {
+          display: none;
+        }
+      }
+    
+    @media screen and (max-width: 600px) {
+    .level-2 {
+        width: 90%;
+        h2 {
+        width: 100%;
+        }
+    }
+    }
+}

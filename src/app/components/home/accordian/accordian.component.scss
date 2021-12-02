@@ -1,0 +1,83 @@
+.main-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    
+    .acc {
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-start;
+      width: 100%;
+      mat-card {
+        display: flex;
+        justify-content: flex-start;
+        overflow-x: auto;
+        width: 90%;
+        height: 100%;
+        //border: #C8C8C8 1px solid;
+        .card-container {
+          display: flex;
+          flex-direction: column;
+          flex-shrink: 0;
+          width:30em;
+          height: 100%;
+          img {
+            margin: 20px;
+            width: 90%;
+            height: 100%;
+            border-radius: 3px;
+          }
+          mat-card-content {
+            margin-left: 20px;
+            font-size: medium;
+          }
+          mat-card-actions {
+            margin-left: 20px;
+          }
+        }
+      }
+
+      mat-expansion-panel {
+        -webkit-box-shadow: none;
+        -moz-box-shadow: none;
+        box-shadow: none;
+        width: 100%;
+        mat-expansion-panel-header {
+          display: flex;
+          width: 100%;
+        }
+      }
+      
+    }
+  }
+
+    mat-form-field {
+      width: 400px;
+      position: relative;
+    }
+      
+      
+      
+      .main-container::-webkit-scrollbar {
+        display: none;
+      }
+      
+      .mat-form-field + .mat-form-field {
+        margin-left: 8px;
+      }
+      
+      .mat-expansion-panel-header-title {
+        font-family:Arial, Helvetica, sans-serif;
+        font-weight: 800;
+        color: #1E1E1E;
+      
+      }
+      
+      
+
+      
+      
+      mat-card::-webkit-scrollbar { display: none; }
+      
+      

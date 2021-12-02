@@ -3,7 +3,7 @@
 @import 'palettes';
 
 $custom-typography: mat-typography-config(
-  $font-family: 'Raleway'
+  $font-family: 'Nunito'
 );
 
 @include mat-core($custom-typography);

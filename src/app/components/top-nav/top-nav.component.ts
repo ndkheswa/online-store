@@ -16,6 +16,8 @@ export class TopNavComponent implements OnInit {
 
   message = false;
 
+  isAuthenticated = false;
+
   private returnUrl = '/';
 
   constructor(private router: Router) {
@@ -32,6 +34,14 @@ export class TopNavComponent implements OnInit {
   toggle(): void {
     this.toggleSideNav.emit();
     this.isExpanded.emit(!this.message);
+  }
+
+  login() {
+    // not implemented
+  }
+
+  logout() {
+    // not implemented
   }
 
 }

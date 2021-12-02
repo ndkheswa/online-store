@@ -19,9 +19,14 @@ import { MenuListItemComponent } from './components/menu-list-item/menu-list-ite
 import { TopNavComponent } from './components/top-nav/top-nav.component';
 import { NavComponent } from './components/nav/nav.component';
 import { HomeComponent } from './components/home/home.component';
-import { CardsComponent } from './components/cards/cards.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { GetStartedComponent } from './components/get-started/get-started.component';
+import { BannerComponent } from './components/home/banner/banner.component';
+import { StartLearningComponent } from './components/home/start-learning/start-learning.component';
+import { SteerCareerComponent } from './components/home/steer-career/steer-career.component';
+import { ToLearnComponent } from './components/home/to-learn/to-learn.component';
+import { AccordianComponent } from './components/home/accordian/accordian.component';
+import { WebDesignComponent } from './components/home/web-design/web-design.component';
 
 @NgModule({
   declarations: [
@@ -35,9 +40,14 @@ import { GetStartedComponent } from './components/get-started/get-started.compon
     TopNavComponent,
     NavComponent,
     HomeComponent,
-    CardsComponent,
     FooterComponent,
-    GetStartedComponent
+    GetStartedComponent,
+    BannerComponent,
+    StartLearningComponent,
+    SteerCareerComponent,
+    ToLearnComponent,
+    AccordianComponent,
+    WebDesignComponent
   ],
   imports: [
     HttpClientModule,

@@ -1,0 +1,41 @@
+.main-container {
+  .banner {
+    background-image: url('../../../../assets/ronald-cuyan-AJgFLjnmSs4-unsplash-removebg.png');
+    background-size:cover;
+    background-position: 50% 80%;
+    background-color: #fff;
+    height: 400px;
+    .text-background {
+      position: relative;
+      left: 220px;
+      transform: translateY(40%);
+      width: 40%;
+      color: #021E4C;
+      h2 {
+        font-weight: 700;
+        font-size:50px;
+      }
+
+      p {
+        left: 20px;
+        top: 20px;
+        font-weight: 500;
+        font-size:26px;
+        line-height: 1em;
+        width: 95%;
+      }
+
+    }
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .main-container {
+    .banner {
+      height: 180px;
+      .text-background {
+        display: none;
+      }
+    }
+  }
+}

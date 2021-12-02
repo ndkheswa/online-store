@@ -1,5 +1,5 @@
 # base image
-FROM node:12.2.0-alpine AS builder
+FROM --platform=linux/amd64 node:12.2.0-alpine AS builder
 EXPOSE 80 8080
 
 # install chrome for protractor tests
@@ -29,6 +29,7 @@ COPY . /app
 
 # build app
 RUN npm run build:$env
+RUN ls -lrt /app
 
 # change image to nginx
 FROM nginx:alpine
