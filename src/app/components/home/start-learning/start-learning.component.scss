@@ -28,13 +28,18 @@
           display: none;
         }
       }
-    
+
+}
+
+.main-container {
     @media screen and (max-width: 600px) {
-    .level-2 {
-        width: 90%;
-        h2 {
-        width: 100%;
+        border-bottom: 1px solid #DEDEDE;
+        .level-2 {
+            width: 90%;
+            h2 {
+            width: 100%;
+            }
         }
     }
-    }
 }
+
