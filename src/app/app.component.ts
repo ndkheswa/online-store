@@ -1,5 +1,6 @@
 import { Component, ElementRef, ViewChild } from '@angular/core';
 import { MenuItem } from './model/menu-item';
+import { NavItem } from './nav-item';
 import { NavService } from './services/nav.service';
 
 @Component({

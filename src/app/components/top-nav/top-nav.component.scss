@@ -4,51 +4,65 @@ $toolbar-title-padding: 16px !default;
   margin: 0 $toolbar-title-padding 0 $toolbar-title-padding;
 }
 
-.navigation-items {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  cursor: pointer;
-  mat-icon:hover {
-    color: #1434CB;
-    border-bottom: 1px solid #ccc;    
-  }
-}
+
 
 .mat-toolbar {
   background-color: #fff;
   border-bottom: 1px solid #DEDEDE;
-}
-
-.navigation-items{
-  list-style-type: none;
-  padding: 0;
-  margin: 0;
-  cursor: pointer;
-  color: #021E4C;
-
-  li {
-    .login-button {
-      button {
-        font-size: 16px;
-        font-weight: 300;
+  .mat-toolbar-row {
+    .navigation-items {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      cursor: pointer;
+      color: #021E4C;
+      cursor: pointer;
+      li {
+        .login-button {
+          button {
+            font-size: 16px;
+            font-weight: 300;
+          }
+          button:hover {
+            color: #1434CB;
+            background-color: #fff;
+          }
+        }
+        .signup-button {
+          button {
+            border: 1px solid #fff;
+            color: #021E4C;
+            background-color: #F7B600;
+            font-size: 16px;
+            font-weight: 300;
+          }
+          button:hover {
+            color: #1434CB;
+            background-color: #fff;
+          }
+        }
+        
       }
-      button:hover {
+      .main-menu {
+        display: flex;
+        position: relative;
+        border-left: 1px solid #DEDEDE;
+        li {
+          border-right: 1px solid #DEDEDE;
+          button:focus {
+            background-color: #fff;
+            outline: 0 !important;
+            border-bottom: 3px solid #F7B600;
+          }
+          button:hover {
+            color: #1434CB;
+          }
+        }
+        left: -500px;
+      }
+      mat-icon:hover {
         color: #1434CB;
-        background-color: #fff;
-      }
-    }
-    .signup-button {
-      button {
-        border: 1px solid #fff;
-        color: #021E4C;
-        background-color: #F7B600;
-        font-size: 16px;
-        font-weight: 300;
-      }
-      button:hover {
-        color: #1434CB;
-        background-color: #fff;
+        border-bottom: 1px solid #ccc;    
       }
     }
   }

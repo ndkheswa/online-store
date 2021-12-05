@@ -1,11 +1,35 @@
 <mat-toolbar class="mat-elevation-z1">
   <mat-toolbar-row>
-    <button mat-icon-button id="menu" (click)="toggle()" fxHide.gt-xs>
+    <button mat-icon-button id="menu" (click)="navService.openNav()" fxHide.gt-xs>
       <mat-icon>menu</mat-icon>
     </button>
 
     <div fxFlex fxLayout fxLayoutAlign="flex-end">
       <ul fxLayout fxLayoutGap="20px" class="navigation-items">
+        <div class="main-menu">
+          <li fxHide.xs>
+            <div>
+              <button mat-button routerLink="" [routerLinkActive]="['is-active']">
+                Courses
+              </button>
+            </div>
+          </li>
+          <li fxHide.xs>
+            <div>
+              <button mat-button routerLink="/learner-dashboard" [routerLinkActive]="['is-active']">
+                Learner Dashboard
+              </button>
+            </div>
+          </li>
+          <li fxHide.xs>
+            <div>
+              <button mat-button routerLink="/base/dashboard" [routerLinkActive]="['is-active']">
+                Contact Us
+              </button>
+            </div>
+          </li>
+        </div>
+        
         <li fxHide.xs>
           <button mat-button *ngIf="isAuthenticated else elseBlock" (click)="logout()">
             <mat-icon>logout_outline</mat-icon> Logout
@@ -18,6 +42,7 @@
             </div>
           </ng-template>
         </li>
+        
         <li fxHide.xs>
           <div class="signup-button">
             <button mat-button (click)="login()">

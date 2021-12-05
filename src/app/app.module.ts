@@ -27,6 +27,7 @@ import { SteerCareerComponent } from './components/home/steer-career/steer-caree
 import { ToLearnComponent } from './components/home/to-learn/to-learn.component';
 import { AccordianComponent } from './components/home/accordian/accordian.component';
 import { WebDesignComponent } from './components/home/web-design/web-design.component';
+import { LearnerDashboardComponent } from './components/learner-dashboard/learner-dashboard.component';
 
 @NgModule({
   declarations: [
@@ -47,7 +48,8 @@ import { WebDesignComponent } from './components/home/web-design/web-design.comp
     SteerCareerComponent,
     ToLearnComponent,
     AccordianComponent,
-    WebDesignComponent
+    WebDesignComponent,
+    LearnerDashboardComponent
   ],
   imports: [
     HttpClientModule,

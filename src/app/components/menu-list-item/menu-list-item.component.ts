@@ -1,7 +1,7 @@
 import { animate, state, style, transition, trigger } from '@angular/animations';
 import { Component, HostBinding, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { MenuItem } from 'src/app/model/menu-item';
+import { NavItem } from 'src/app/nav-item';
 import { NavService } from 'src/app/services/nav.service';
 
 @Component({
@@ -22,7 +22,7 @@ import { NavService } from 'src/app/services/nav.service';
 export class MenuListItemComponent implements OnInit {
   expanded = false;
   @HostBinding('attr.aria-expanded') ariaExpanded = this.expanded;
-  @Input() item: MenuItem;
+  @Input() item: NavItem;
   @Input() depth: number;
 
   constructor(private navService: NavService, public router: Router) {
@@ -40,9 +40,10 @@ export class MenuListItemComponent implements OnInit {
     });
   }
 
-  onItemSelected(item: MenuItem): void {
+  onItemSelected(item: NavItem): void {
     if (!item.children || !item.children.length) {
       this.router.navigate([item.route]);
+      console.log(item.route);
       this.navService.closeNav();
     }
     if (item.children && item.children.length) {
