@@ -7,6 +7,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LearnerDashboardComponent implements OnInit {
 
+  public courses = [
+    { status: "In progress" },
+    { status: "Not started" },
+    { status: "In progress" }
+  ];
+
   constructor() { }
 
   ngOnInit(): void {

@@ -12,17 +12,24 @@
     <div class="main-section">
         <div class="content-area">
             <div class="left-main">
-                <div class="course-content">
+                <div class="course-list">
                     <h1>
                         My courses
                     </h1>
-                    <div class="course-list">
-    
-                    </div>
+                    <app-course *ngFor="let item of courses" [item]="item"></app-course>
                 </div>
             </div>
             <div class="right-main">
-    
+                
+            </div>
+        </div>
+    </div>
+    <div class="all-courses-main">
+        <div class="all-courses">
+            <div class="content-area">
+                <h1>
+                    Browse all courses
+                </h1>
             </div>
         </div>
     </div>

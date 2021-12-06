@@ -1,0 +1,50 @@
+.course {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100px;
+    width: 100%;
+    box-shadow: 0 3px 10px rgb(0 0 0 / 0.1);
+    background-color: #fff;
+    border-bottom: 1px solid #ccc;
+    .course-detail {
+        display: flex;
+        justify-content: space-around;
+        width: 45%;
+        height: 75%;
+        margin-left: 20px;
+        .status {
+            background-color: #ADE420;
+            width: 40%;
+            height: 100%;
+            p {
+                position: relative;
+                color: #fff;
+                background-color: #333333;
+                width: 50%;
+                border-radius: 3px;
+                margin-top: 5px;
+                margin-left: 80px;
+                text-align: center;
+            }
+        }
+        .text {
+            h2 {
+                font-size: 14px;
+                font-weight: 700;
+                margin: 0;
+                padding: 0;
+            }
+            p {
+                font-size: 13px;
+                font-weight: 700;
+                color: #545B64;
+            }
+        }
+    }
+}
+
+.course:hover {
+    background-color: #f5f5f5;
+    cursor: pointer;
+}

@@ -28,6 +28,7 @@ import { ToLearnComponent } from './components/home/to-learn/to-learn.component'
 import { AccordianComponent } from './components/home/accordian/accordian.component';
 import { WebDesignComponent } from './components/home/web-design/web-design.component';
 import { LearnerDashboardComponent } from './components/learner-dashboard/learner-dashboard.component';
+import { CourseComponent } from './components/course/course.component';
 
 @NgModule({
   declarations: [
@@ -49,7 +50,8 @@ import { LearnerDashboardComponent } from './components/learner-dashboard/learne
     ToLearnComponent,
     AccordianComponent,
     WebDesignComponent,
-    LearnerDashboardComponent
+    LearnerDashboardComponent,
+    CourseComponent
   ],
   imports: [
     HttpClientModule,
