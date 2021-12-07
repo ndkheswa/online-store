@@ -1,11 +1,25 @@
-<div class="course">
+<button mat-button>
+    <span [ngStyle]="{'background-color': getStatusColor() }" id="box">
+        <p [ngStyle]="{'background-color': getBackgroundColor() }">{{ item.status }}</p>
+    </span> 
+    
+    <span>
+        {{ item.name }}
+    </span>
+    
+</button>
+
+<!--
+    <div class="course">
     <div class="course-detail">
-        <div class="status">
-            <p [ngStyle]="{'background-color': item.status === 'In progress' ? '#333334' : '#DC6B0F' }">{{ item.status }}</p>
-        </div>
+        <button [ngStyle]="{'background-color': getStatusColor() }" class="status" mat-button routerLink="" [routerLinkActive]="['is-active']">
+            <p [ngStyle]="{'background-color': getBackgroundColor() }">{{ item.status }}</p>
+            
+        </button>
         <div class="text">
-            <h2>Cloud Computing</h2>
-            <p>Cloud Computing Path | 09h 40m</p>
+            <h2>{{ item.name }}</h2>
+            <p>{{ item.description }} | 09h 40m</p>
         </div>
     </div>
 </div>
+-->

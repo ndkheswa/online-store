@@ -51,7 +51,8 @@ import { CourseComponent } from './components/course/course.component';
     AccordianComponent,
     WebDesignComponent,
     LearnerDashboardComponent,
-    CourseComponent
+    CourseComponent,
+    CourseListComponent
   ],
   imports: [
     HttpClientModule,

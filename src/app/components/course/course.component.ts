@@ -15,4 +15,18 @@ export class CourseComponent implements OnInit {
     console.log(this.item);
   }
 
+  getBackgroundColor() {
+    if (this.item.status === 'In progress') {
+      return '#333334'
+    } else if (this.item.status === 'Not started')
+      return '#DC6B0F'
+  }
+
+  getStatusColor() {
+    if (this.item.status === 'In progress') {
+      return '#ADE423'
+    } else if (this.item.status === 'Not started')
+      return '#36C3B5'
+  }
+
 }

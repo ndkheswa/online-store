@@ -1,3 +1,45 @@
+.main-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  h1 {
+    border: 1px solid red;
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 0;
+    display: inline-block;
+    width: 25%;
+    text-align: center;
+  }
+  .card-list {
+    button {
+      color: #021E4C;
+      font-size: 16px;
+      font-weight: 300;
+      background: linear-gradient(0deg, #fff 60%, #36C3B4 40%);
+      box-shadow: 0 3px 10px rgb(0 0 0 / 0.15);
+      width: 220px;
+      height: 320px;
+      border-radius: 0;
+      p {
+        position: relative;
+        top: -130px;
+        right: -40px;
+        font-size: 14px;
+        font-weight: 400;
+        color: #fff;
+        padding: 0;
+        margin: 0;
+        display: inline-block;
+        line-height: 1.5em;
+        background-color: #DB6B10;
+        border-radius: 3px;
+        padding: 2px 3px;
+      }
+    }
+  }
+}
+
 h4 {
   margin: 0;
 }
