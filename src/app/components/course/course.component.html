@@ -1,13 +1,13 @@
-<button mat-button>
-    <span [ngStyle]="{'background-color': getStatusColor() }" id="box">
-        <p [ngStyle]="{'background-color': getBackgroundColor() }">{{ item.status }}</p>
-    </span> 
-    
-    <span>
+<div class="main-container">
+    <button mat-button>
+        <span [ngStyle]="{'background-color': getStatusColor() }" id="box">
+            <p [ngStyle]="{'background-color': getBackgroundColor() }">{{ item.status }}</p>
+        </span> 
+        
         {{ item.name }}
-    </span>
-    
-</button>
+        
+    </button>
+</div>
 
 <!--
     <div class="course">
