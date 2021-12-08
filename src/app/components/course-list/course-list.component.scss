@@ -9,6 +9,12 @@
     display: inline-block;
     width: 25%;
     text-align: center;
+    margin-top: 20px;
+  }
+  @media screen and (max-width: 800px) {
+    h1 {
+      width: 30%;
+    }
   }
   .card-list {
     button {
