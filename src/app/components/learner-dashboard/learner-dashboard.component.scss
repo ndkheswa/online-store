@@ -4,7 +4,6 @@
     align-items: center;
     border: none;
     color: #2C2C2C;
-    //border-bottom: 1px solid #DEDEDE;
     .header-main {
         display: flex;
         justify-content: center;
@@ -24,13 +23,11 @@
                 align-items: center;
                 display: flex;
                 width: 18%;
-                border: 1px solid red;
                 h1 {
                     font-size: 18px;
                     font-weight: 700;
                     padding: 0;
                     margin-bottom:0;
-                    border: 1px solid red;
                 }
                 img {
                     border-radius: 50%;
@@ -54,7 +51,6 @@
         justify-content: flex-end;
         background-color: #F9F8F8;
         width: 100%;
-        border: 1px solid red;
         .content-area {
             display: flex;
             flex-direction: row;
