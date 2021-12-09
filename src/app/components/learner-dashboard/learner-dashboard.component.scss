@@ -55,6 +55,7 @@
         width: 100%;
         .content-area {
             display: flex;
+            flex-direction: row;
             width:80%;
             .left-main {
                 display: flex;
@@ -94,6 +95,11 @@
                 .right-main {
                     display: none;
                 }
+            }
+        }
+        @media screen and (max-width: 800px) {
+            .content-area {
+                width: 90%;
             }
         }
     }
