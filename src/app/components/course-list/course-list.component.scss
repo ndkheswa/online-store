@@ -2,6 +2,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-bottom: 60px;
   h1 {
     font-size: 18px;
     font-weight: 600;
@@ -9,88 +10,23 @@
     display: inline-block;
     width: 25%;
     text-align: center;
-    margin-top: 20px;
+    margin: 20px 0;
+  }
+  .course-list {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 40%;
+    flex-wrap: wrap;
+    overflow-x: auto;
   }
   @media screen and (max-width: 800px) {
     h1 {
       width: 30%;
     }
-  }
-  .card-list {
-    button {
-      color: #021E4C;
-      font-size: 16px;
-      font-weight: 300;
-      box-shadow: 0 3px 10px rgb(0 0 0 / 0.15);
-      width: 220px;
-      height: 320px;
-      border-radius: 0;
-      p {
-        position: relative;
-        top: -130px;
-        right: -40px;
-        font-size: 14px;
-        font-weight: 400;
-        color: #fff;
-        padding: 0;
-        margin: 0;
-        display: inline-block;
-        line-height: 1.5em;
-        background-color: #DB6B10;
-        border-radius: 3px;
-        padding: 2px 3px;
-      }
+    .course-list {
+      width: 100%;
     }
-  }
-}
-
-h4 {
-  margin: 0;
-}
-
-ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  li {
-    a {
-      margin: 1px 0;
-      font-size: 14px;
-      color:#727272;
-    }
-    a:hover {
-      color: #4C26AF;
-      text-decoration: underline;
-    }
-  }
-}
-
-a:link,
-a:visited {
-  color: #5D6063;
-  text-decoration: none;
-}
-
-.virtical-container {
-  margin: 0 20px 0;
-  width: 4px;
-  height: 300px;
-  background-color: #4C26AF;
-}
-
-button {
-  margin-top: 20px;
-  color: #727272;
-}
-
-button:hover {
-  color: #4C26AF;
-}
-
-@media only screen and (max-width: 599px) {
-  .virtical-container {
-    margin: 0;
-    padding: 0;
   }
 }
 

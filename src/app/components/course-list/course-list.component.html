@@ -2,13 +2,8 @@
   <h1>
     All courses
   </h1>
-  <div class="card-list">
-    <button [ngStyle]="{'background': getBackgroundColor() }" mat-button routerLink="" [routerLinkActive]="['is-active']">
-      <p [ngStyle]="{'background-color': getStatusColor() }">
-        In progress
-      </p>
-      
-    </button>
+  <div class="course-list">
+    <app-course *ngFor="let item of items" [item]="item"></app-course>
   </div>
 </div>
 

@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { SharedDataService } from 'src/app/services/shared-data.service';
 
 @Component({
   selector: 'app-course',
@@ -7,26 +8,27 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class CourseComponent implements OnInit {
 
-  @Input() item;
+  @Input() item: any;
 
   constructor() { }
 
   ngOnInit(): void {
-    console.log(this.item);
-  }
-
-  getBackgroundColor() {
-    if (this.item.status === 'In progress') {
-      return '#ADE420'
-    } else if (this.item.status === 'Not started')
-      return '#34C3B6'
+    
   }
 
   getStatusColor() {
     if (this.item.status === 'In progress') {
-      return '#333333';
+      return '#333333'
     } else if (this.item.status === 'Not started')
-      return '#DE6B0F';
+      return '#DE6B0F'
+  }
+
+  getBackgroundColor() {
+    console.log('item: ', this.item.status);
+    if (this.item.status === 'In progress') {
+      return 'linear-gradient(0deg, #fff 60%, #AEE420 40%)';
+    } else if (this.item.status === 'Not started')
+      return 'linear-gradient(0deg, #fff 60%, #36C3B5 40%)';
   }
 
 }

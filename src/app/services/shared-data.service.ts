@@ -7,8 +7,8 @@ import { Course } from '../model/course';
 })
 export class SharedDataService {
 
-  public objectToUpdate: any = null;
-  private objectSource = new BehaviorSubject<Course>(this.objectToUpdate);
+  public objectToUpdate: any[] = null;
+  private objectSource = new BehaviorSubject<Course[]>(this.objectToUpdate);
 
   constructor() { }
 

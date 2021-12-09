@@ -20,4 +20,6 @@ export class LearnerDashboardComponent implements OnInit {
     this.sharedDataService.changeObject(this.courses);
   }
 
+  
+
 }

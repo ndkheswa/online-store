@@ -1,12 +1,12 @@
-import { Component, Input, OnInit, AfterViewInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { SharedDataService } from 'src/app/services/shared-data.service';
 
 @Component({
-  selector: 'app-course-list',
-  templateUrl: './course-list.component.html',
-  styleUrls: ['./course-list.component.scss']
+  selector: 'app-my-course-list',
+  templateUrl: './my-course-list.component.html',
+  styleUrls: ['./my-course-list.component.scss']
 })
-export class CourseListComponent implements OnInit {
+export class MyCourseListComponent implements OnInit {
 
   items: any[];
 
@@ -17,6 +17,5 @@ export class CourseListComponent implements OnInit {
       this.items = data;
     });
   }
-
 
 }

@@ -29,6 +29,8 @@ import { AccordianComponent } from './components/home/accordian/accordian.compon
 import { WebDesignComponent } from './components/home/web-design/web-design.component';
 import { LearnerDashboardComponent } from './components/learner-dashboard/learner-dashboard.component';
 import { CourseComponent } from './components/course/course.component';
+import { MyCourseComponent } from './components/my-course/my-course.component';
+import { MyCourseListComponent } from './components/my-course-list/my-course-list.component';
 
 @NgModule({
   declarations: [
@@ -52,7 +54,9 @@ import { CourseComponent } from './components/course/course.component';
     WebDesignComponent,
     LearnerDashboardComponent,
     CourseComponent,
-    CourseListComponent
+    CourseListComponent,
+    MyCourseComponent,
+    MyCourseListComponent
   ],
   imports: [
     HttpClientModule,
