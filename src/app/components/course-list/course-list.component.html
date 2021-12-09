@@ -3,8 +3,8 @@
     All courses
   </h1>
   <div class="card-list">
-    <button [ngStyle]="{'background-color': '#36C3B5' }" mat-button routerLink="" [routerLinkActive]="['is-active']">
-      <p>
+    <button [ngStyle]="{'background': getBackgroundColor() }" mat-button routerLink="" [routerLinkActive]="['is-active']">
+      <p [ngStyle]="{'background-color': getStatusColor() }">
         In progress
       </p>
       

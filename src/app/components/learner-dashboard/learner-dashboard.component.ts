@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { SharedDataService } from 'src/app/services/shared-data.service';
 
 @Component({
   selector: 'app-learner-dashboard',
@@ -13,9 +14,10 @@ export class LearnerDashboardComponent implements OnInit {
     { status: "In progress", name: "Software Engineering", description: "Software Engineering Path" }
   ];
 
-  constructor() { }
+  constructor(private sharedDataService: SharedDataService) { }
 
   ngOnInit(): void {
+    this.sharedDataService.changeObject(this.courses);
   }
 
 }

@@ -17,16 +17,16 @@ export class CourseComponent implements OnInit {
 
   getBackgroundColor() {
     if (this.item.status === 'In progress') {
-      return '#333334'
+      return '#ADE420'
     } else if (this.item.status === 'Not started')
-      return '#DC6B0F'
+      return '#34C3B6'
   }
 
   getStatusColor() {
     if (this.item.status === 'In progress') {
-      return '#ADE423'
+      return '#333333';
     } else if (this.item.status === 'Not started')
-      return '#36C3B5'
+      return '#DE6B0F';
   }
 
 }
