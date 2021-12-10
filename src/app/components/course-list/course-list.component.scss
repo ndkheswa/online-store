@@ -17,8 +17,12 @@
     flex-direction: row;
     justify-content: space-between;
     width: 40%;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    &::-webkit-scrollbar {
+    display: none;
+  }
   }
   @media screen and (max-width: 800px) {
     h1 {
