@@ -4,3 +4,8 @@ export interface User {
   name: string;
   password: string;
 }
+
+export interface loginDto {
+  name: string;
+  password: string;
+}

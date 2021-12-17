@@ -12,7 +12,7 @@
           <input matInput placeholder="Password" formControlName="password" type="password">
         </mat-form-field>
         <mat-card-actions>
-          <button mat-stroked-button >Start coding now</button>
+          <button mat-stroked-button [disabled]="!registerForm.valid">Start coding now</button>
         </mat-card-actions>
       </form>
     </div>
@@ -20,7 +20,3 @@
       By login in, you agree to Learncoding RSA's <a href="#">Terms of Service</a> & <a href="#">Privacy Policy</a>.
     </div>
   </div>
-
-  <!--
-    [disabled]="!registerForm.valid"
-  -->
