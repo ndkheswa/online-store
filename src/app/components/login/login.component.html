@@ -1,0 +1,26 @@
+
+<div class="form-container">
+    <div class="signup-form">
+      <form [formGroup]="registerForm" autocomplete="off"  (ngSubmit)="register(registerForm.value)">
+        <h2>Login</h2>
+        <mat-form-field appearance="outline">
+          <mat-icon matPrefix>email_outline</mat-icon>
+          <input matInput placeholder="Email" formControlName="username" type="email">
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+          <mat-icon matPrefix>lock</mat-icon>
+          <input matInput placeholder="Password" formControlName="password" type="password">
+        </mat-form-field>
+        <mat-card-actions>
+          <button mat-stroked-button >Start coding now</button>
+        </mat-card-actions>
+      </form>
+    </div>
+    <div class="text">
+      By login in, you agree to Learncoding RSA's <a href="#">Terms of Service</a> & <a href="#">Privacy Policy</a>.
+    </div>
+  </div>
+
+  <!--
+    [disabled]="!registerForm.valid"
+  -->

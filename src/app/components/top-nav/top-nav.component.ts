@@ -1,5 +1,6 @@
 import { Component, OnInit, Output } from '@angular/core';
 import { EventEmitter } from '@angular/core';
+import { Router } from '@angular/router';
 import { NavService } from 'src/app/services/nav.service';
 
 @Component({
@@ -17,14 +18,19 @@ export class TopNavComponent implements OnInit {
 
   private returnUrl = '/';
 
-  constructor(public navService: NavService) {
+  constructor(private router: Router ,public navService: NavService) {
   }
 
   ngOnInit(): void {
   }
 
+  signup() {
+    this.router.navigateByUrl('register');
+  }
+
   login() {
     // not implemented
+    this.router.navigateByUrl('login');
   }
 
   logout() {

@@ -31,6 +31,9 @@ import { LearnerDashboardComponent } from './components/learner-dashboard/learne
 import { CourseComponent } from './components/course/course.component';
 import { MyCourseComponent } from './components/my-course/my-course.component';
 import { MyCourseListComponent } from './components/my-course-list/my-course-list.component';
+import { LoginComponent } from './components/login/login.component';
+import { SuccessDialogComponent } from './components/shared/success-dialog/success-dialog.component';
+import { ErrorDialogComponent } from './components/shared/error-dialog/error-dialog.component';
 
 @NgModule({
   declarations: [
@@ -56,7 +59,10 @@ import { MyCourseListComponent } from './components/my-course-list/my-course-lis
     CourseComponent,
     CourseListComponent,
     MyCourseComponent,
-    MyCourseListComponent
+    MyCourseListComponent,
+    LoginComponent,
+    SuccessDialogComponent,
+    ErrorDialogComponent
   ],
   imports: [
     HttpClientModule,

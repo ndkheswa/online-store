@@ -14,7 +14,7 @@ export class NavComponent implements AfterViewInit {
 
   public loginItems: NavItem[] = [
     { route: "login", name: "Sign In"},
-    { route: "signup", name: "Sign Up"}
+    { route: "register", name: "Sign Up"}
   ];
 
   public navItems: NavItem[] = [

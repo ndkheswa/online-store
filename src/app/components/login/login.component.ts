@@ -1,17 +1,17 @@
-import { Location } from '@angular/common';
 import { Component, Inject, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { MatDialogRef, MatDialog, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { User } from 'src/app/model/user';
 import { UserService } from 'src/app/services/user.service';
 import { SuccessDialogComponent } from '../shared/success-dialog/success-dialog.component';
+import { Location } from '@angular/common';
 
 @Component({
-  selector: 'app-register',
-  templateUrl: './register.component.html',
-  styleUrls: ['./register.component.scss']
+  selector: 'app-login',
+  templateUrl: './login.component.html',
+  styleUrls: ['./login.component.scss']
 })
-export class RegisterComponent implements OnInit {
+export class LoginComponent implements OnInit {
 
   public registerForm: FormGroup;
   private dialogConfig;
