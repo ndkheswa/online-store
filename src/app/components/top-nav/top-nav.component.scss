@@ -10,6 +10,9 @@ $toolbar-title-padding: 16px !default;
   background-color: #fff;
   border-bottom: 1px solid #DEDEDE;
   .mat-toolbar-row {
+    button:focus {
+      outline: 0 !important;
+    }
     .navigation-items {
       list-style: none;
       padding: 0;
@@ -18,9 +21,7 @@ $toolbar-title-padding: 16px !default;
       color: #021E4C;
       cursor: pointer;
       li {
-        button:focus {
-          outline: 0 !important;
-        }
+        
         .login-button {
           button {
             font-size: 16px;
