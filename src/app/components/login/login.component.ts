@@ -1,10 +1,12 @@
 import { Component, Inject, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { MatDialogRef, MatDialog, MAT_DIALOG_DATA } from '@angular/material/dialog';
-import { User } from 'src/app/model/user';
+import { LoginDto, User } from 'src/app/model/user';
 import { UserService } from 'src/app/services/user.service';
 import { SuccessDialogComponent } from '../shared/success-dialog/success-dialog.component';
 import { Location } from '@angular/common';
+import { ActivatedRoute, Router } from '@angular/router';
+import { AuthStatusService } from 'src/app/services/auth-status.service';
 
 @Component({
   selector: 'app-login',
@@ -13,17 +15,21 @@ import { Location } from '@angular/common';
 })
 export class LoginComponent implements OnInit {
 
-  public registerForm: FormGroup;
+  public loginForm: FormGroup;
   private dialogConfig;
   errorService: any;
+  returnUrl: string;
 
-  constructor(private userService: UserService, private dialogRef: MatDialogRef<SuccessDialogComponent>,
-              private dialog: MatDialog, private location: Location, @Inject(MAT_DIALOG_DATA) public data: any) {}
+  constructor(private authStatus: AuthStatusService , private route: ActivatedRoute, private router: Router ,private userService: UserService, private dialogRef: MatDialogRef<SuccessDialogComponent>,
+              private dialog: MatDialog, private location: Location, @Inject(MAT_DIALOG_DATA) public data: any) {
+                if (this.userService.currentUserValue) {
+                  this.router.navigate(['learner-dashboard']);
+                }
+              }
 
   ngOnInit(): void {
-    this.registerForm = new FormGroup({
-      fullname: new FormControl('', [Validators.required, Validators.maxLength(100)]),
-      username: new FormControl('', [Validators.required, Validators.pattern('^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$')]),
+    this.loginForm = new FormGroup({
+      name: new FormControl('', [Validators.required, Validators.pattern('^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$')]),
       password: new FormControl('', [Validators.required, Validators.maxLength(100)]),
     });
 
@@ -33,41 +39,35 @@ export class LoginComponent implements OnInit {
       disableClose: true,
       data: {}
     };
+    this.returnUrl = this.route.snapshot.queryParams['returnUrl'] || 'learner-dashboard';
   }
 
   public hasError = (controlName: string, errorName: string) => {
-    return this.registerForm.controls[controlName].hasError(errorName);
+    return this.loginForm.controls[controlName].hasError(errorName);
   }
 
   public onCancel = () => {
     this.location.back();
   }
 
-  public registerClient = (registerFormValue) => {
-    if (this.registerForm.valid) {
-      this.register(registerFormValue);
+  public loginClient = (loginFormValue) => {
+    if (this.loginForm.valid) {
+      this.login(loginFormValue);
     }
   }
 
-  public register = (registerFormValue) => {
+  public login = (loginFormValue) => {
 
-    const user: User = {
-      give_name: registerFormValue.fullname,
-      family_name: registerFormValue.family_name,
-      name: registerFormValue.name,
-      password: registerFormValue.password
+    const loginDto: LoginDto = {
+      name: loginFormValue.name,
+      password: loginFormValue.password
     };
 
-    this.userService.register(user)
-      .subscribe(
-        result => {
-          this.dialogRef = this.dialog.open(SuccessDialogComponent, this.dialogConfig);
-
-          this.dialogRef.afterClosed()
-            .subscribe(() => {
-              this.location.go('/login');
-            });
-        },
+    this.userService.login(loginDto)
+      .subscribe(data => {
+        this.authStatus.changeObject(true);
+        this.router.navigateByUrl(this.returnUrl);
+      },
         (error => {
           this.errorService.dialogConfig = { ...this.dialogConfig };
           this.errorService.handleError(error);

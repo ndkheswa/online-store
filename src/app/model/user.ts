@@ -5,7 +5,7 @@ export interface User {
   password: string;
 }
 
-export interface loginDto {
+export interface LoginDto {
   name: string;
   password: string;
 }
