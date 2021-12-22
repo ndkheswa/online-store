@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { BehaviorSubject } from 'rxjs';
+import { BehaviorSubject, Observable } from 'rxjs';
 import { Course } from '../model/course';
 
 @Injectable({
@@ -7,8 +7,8 @@ import { Course } from '../model/course';
 })
 export class SharedDataService {
 
-  public objectToUpdate: any[] = null;
-  private objectSource = new BehaviorSubject<Course[]>(this.objectToUpdate);
+  public objectToUpdate: Observable<any[]> = null;
+  private objectSource = new BehaviorSubject<Observable<Course[]>>(this.objectToUpdate);
 
   constructor() { }
 

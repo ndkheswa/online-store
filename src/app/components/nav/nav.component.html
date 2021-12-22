@@ -13,6 +13,11 @@
 
     <mat-nav-list>
       <app-menu-list-item *ngFor="let item of navItems" [item]="item"></app-menu-list-item>
+      <div *ngIf="isAuthenticated">
+        <a mat-list-item>
+          Logout
+        </a>
+      </div>
     </mat-nav-list>
 
   </mat-sidenav>

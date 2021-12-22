@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
 import { SharedDataService } from 'src/app/services/shared-data.service';
 
 @Component({
@@ -8,7 +9,7 @@ import { SharedDataService } from 'src/app/services/shared-data.service';
 })
 export class MyCourseListComponent implements OnInit {
 
-  items: any[];
+  items: Observable<any[]>;
 
   constructor(private sharedDataService: SharedDataService) { }
 

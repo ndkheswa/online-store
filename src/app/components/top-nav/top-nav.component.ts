@@ -24,7 +24,7 @@ export class TopNavComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.logout();
+    this.logout()
     this.authStatus.currentObject.subscribe( status => {
       this.isAuthenticated = status;
     });

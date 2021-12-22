@@ -1,1 +1,1 @@
-<app-my-course *ngFor="let item of items" [item]="item"></app-my-course>
+<app-my-course *ngFor="let item of items | async" [item]="item"></app-my-course>

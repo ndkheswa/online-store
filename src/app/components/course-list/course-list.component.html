@@ -3,7 +3,7 @@
     All courses
   </h1>
   <div class="course-list">
-    <app-course *ngFor="let item of items" [item]="item"></app-course>
+    <app-course *ngFor="let item of items | async" [item]="item"></app-course>
   </div>
 </div>
 
