@@ -1,13 +1,13 @@
 import { Injectable } from '@angular/core';
-import { BehaviorSubject } from 'rxjs';
+import { BehaviorSubject, Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthStatusService {
 
-  public objectToUpdate: boolean = null;
-  private objectSource = new BehaviorSubject<boolean>(this.objectToUpdate);
+  public objectToUpdate: Observable<boolean> = null;
+  private objectSource = new BehaviorSubject<Observable<boolean>>(this.objectToUpdate);
 
   constructor() { }
 

@@ -65,7 +65,6 @@ export class LoginComponent implements OnInit {
 
     this.userService.login(loginDto)
       .subscribe(data => {
-        this.authStatus.changeObject(true);
         this.router.navigateByUrl(this.returnUrl);
       },
         (error => {

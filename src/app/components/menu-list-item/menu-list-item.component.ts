@@ -3,6 +3,7 @@ import { Component, HostBinding, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { NavItem } from 'src/app/nav-item';
 import { NavService } from 'src/app/services/nav.service';
+import { UserService } from 'src/app/services/user.service';
 
 @Component({
   selector: 'app-menu-list-item',
@@ -25,7 +26,7 @@ export class MenuListItemComponent implements OnInit {
   @Input() item: NavItem;
   @Input() depth: number;
 
-  constructor(private navService: NavService, public router: Router) {
+  constructor(private userService: UserService, private navService: NavService, public router: Router) {
     if (this.depth  === undefined) {
       this.depth = 0;
     }
@@ -41,9 +42,11 @@ export class MenuListItemComponent implements OnInit {
   }
 
   onItemSelected(item: NavItem): void {
+    if (item.name === "Logout") {
+      this.userService.logout();
+    }
     if (!item.children || !item.children.length) {
       this.router.navigate([item.route]);
-      console.log(item.route);
       this.navService.closeNav();
     }
     if (item.children && item.children.length) {

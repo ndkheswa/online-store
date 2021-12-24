@@ -4,6 +4,7 @@ import { Inject, Injectable } from '@angular/core';
 import { BehaviorSubject, Observable, of } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { LoginDto, User } from '../model/user';
+import { AuthStatusService } from './auth-status.service';
 
 @Injectable({
   providedIn: 'root'
@@ -12,7 +13,6 @@ export class UserService {
 
   currentUserSubject = new BehaviorSubject<any>(null);
   currentUser = new Observable;
-  isAuthenticated = false;
 
   httpOptions = {
     headers: new HttpHeaders({'Content-Type': 'application/json'}),
@@ -20,7 +20,7 @@ export class UserService {
 
   apiUrl: string;
 
-  constructor(private http: HttpClient, @Inject('BASE_URL') baseUrl: string) {
+  constructor(private http: HttpClient, private authStatus: AuthStatusService, @Inject('BASE_URL') baseUrl: string) {
     this.apiUrl = baseUrl;
     this.currentUserSubject.next(JSON.parse(localStorage.getItem('currentUser')));
     this.currentUser = this.currentUserSubject.asObservable();
@@ -46,15 +46,12 @@ export class UserService {
     .pipe(map(user => {
       localStorage.setItem('currentUser', JSON.stringify(user));
       this.currentUserSubject.next(user);
-      console.log(user);
     }));
-    this.isAuthenticated = true;
   }
 
   public logout() {
     localStorage.removeItem('currentUser');
     this.currentUserSubject.next(null);
-    this.isAuthenticated  = false;
   }
 
   get currentUserValue() {

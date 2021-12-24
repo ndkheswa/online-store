@@ -31,7 +31,7 @@
         </div>
         
         <li fxHide.xs>
-          <button mat-button *ngIf="isAuthenticated else elseBlock" (click)="logout()">
+          <button mat-button *ngIf="currentUser; else elseBlock" (click)="logout()">
             Logout
           </button>
           <ng-template #elseBlock>
@@ -45,19 +45,19 @@
         
         <li fxHide.xs>
           <div class="signup-button">
-            <button mat-button *ngIf="!isAuthenticated" (click)="showSignupForm()">
+            <button mat-button *ngIf="!currentUser" (click)="showSignupForm()">
               Sign up
             </button>
           </div>
         </li>
         
         <li fxHide.xs>
-          <button mat-icon-button *ngIf="isAuthenticated">
+          <button mat-icon-button *ngIf="currentUser">
             <mat-icon class="material-icons-outlined"> shopping_cart </mat-icon>
           </button>
         </li>
         <li fxHide.xs>
-          <button mat-icon-button *ngIf="isAuthenticated">
+          <button mat-icon-button *ngIf="currentUser">
             <mat-icon>person_outline</mat-icon>
           </button>
         </li>

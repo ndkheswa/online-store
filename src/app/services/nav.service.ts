@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Event, NavigationEnd, Router } from '@angular/router';
 import { BehaviorSubject } from 'rxjs';
+import { NavItem } from '../nav-item';
 
 @Injectable({
   providedIn: 'root'
@@ -8,6 +9,9 @@ import { BehaviorSubject } from 'rxjs';
 export class NavService {
   public appDrawer: any;
   public currentUrl = new BehaviorSubject<string>(undefined);
+  
+  public navItems = new BehaviorSubject<NavItem[]>(undefined);
+  public loginItems = new BehaviorSubject<NavItem[]>(undefined);
   
   constructor(private router: Router) {
     this.router.events.subscribe((event: Event) => {

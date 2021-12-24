@@ -1,7 +1,8 @@
 import { AfterViewInit, Component, ElementRef, ChangeDetectorRef, ViewChild } from '@angular/core';
+import { Observable, of } from 'rxjs';
 import { NavItem } from 'src/app/nav-item';
-import { AuthStatusService } from 'src/app/services/auth-status.service';
 import { NavService } from 'src/app/services/nav.service';
+import { UserService } from 'src/app/services/user.service';
 
 @Component({
   selector: 'app-nav',
@@ -13,7 +14,7 @@ export class NavComponent implements AfterViewInit {
   @ViewChild('appDrawer') appDrawer: ElementRef;
   isExpanded: boolean;
 
-  isAuthenticated: boolean;
+  currentUser: Observable<any>;
 
   public loginItems: NavItem[] = [
     { route: "login", name: "Sign In"},
@@ -22,24 +23,30 @@ export class NavComponent implements AfterViewInit {
 
   public navItems: NavItem[] = [
     { route: "learner-dashboard", name: "Learner Dashboard" },
-    { route: "courses", name: "Courses" }
+    { route: "courses", name: "Courses" },
   ];
 
-  constructor(private cdr: ChangeDetectorRef, private authStatus: AuthStatusService , private navService: NavService) {}
+  public logoutItems: NavItem[] = [
+    { route: "", name: "Logout" }
+  ];
+
+  constructor(private cdr: ChangeDetectorRef, private userService: UserService , private navService: NavService) {
+  }
 
   ngAfterViewInit(): void {
     this.navService.appDrawer = this.appDrawer;
-    this.authStatus.currentObject.subscribe(status => {
-      this.isAuthenticated = status;
-      this.cdr.detectChanges();
+    this.userService.currentUserSubject.subscribe(data => {
+      this.currentUser = data;
     });
+    this.cdr.detectChanges();
   }
-
-  
 
   public getExpansionValue($event): void {
     this.isExpanded = $event;
-    console.log(this.isExpanded);
+  }
+
+  logout() {
+    this.userService.logout();
   }
 
 }

@@ -1,6 +1,7 @@
 import { Component, OnInit, Output } from '@angular/core';
 import { EventEmitter } from '@angular/core';
 import { Router } from '@angular/router';
+import { Observable } from 'rxjs';
 import { AuthStatusService } from 'src/app/services/auth-status.service';
 import { NavService } from 'src/app/services/nav.service';
 import { UserService } from 'src/app/services/user.service';
@@ -16,17 +17,16 @@ export class TopNavComponent implements OnInit {
 
   message = false;
 
-  isAuthenticated = false;
+  currentUser: Observable<any>;
 
   private returnUrl = '/';
 
-  constructor(private router: Router , private authStatus: AuthStatusService, private userService: UserService, public navService: NavService) {
+  constructor(private router: Router, private userService: UserService, public navService: NavService) {
   }
 
   ngOnInit(): void {
-    this.logout()
-    this.authStatus.currentObject.subscribe( status => {
-      this.isAuthenticated = status;
+    this.userService.currentUserSubject.subscribe( data => {
+      this.currentUser = data;
     });
   }
 
@@ -43,7 +43,6 @@ export class TopNavComponent implements OnInit {
     // not implemented
     this.userService.logout();
     this.router.navigateByUrl('/');
-    this.isAuthenticated = false;
   }
 
 }
