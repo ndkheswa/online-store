@@ -19,4 +19,5 @@
     <div class="text">
       By login in, you agree to Learncoding RSA's <a href="#">Terms of Service</a> & <a href="#">Privacy Policy</a>.
     </div>
+    <div class="login-error" *ngIf="error">{{ error.error.message }}</div>
   </div>

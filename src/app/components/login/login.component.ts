@@ -19,6 +19,7 @@ export class LoginComponent implements OnInit {
   private dialogConfig;
   errorService: any;
   returnUrl: string;
+  error = '';
 
   constructor(private authStatus: AuthStatusService , private route: ActivatedRoute, private router: Router ,private userService: UserService, private dialogRef: MatDialogRef<SuccessDialogComponent>,
               private dialog: MatDialog, private location: Location, @Inject(MAT_DIALOG_DATA) public data: any) {
@@ -71,6 +72,7 @@ export class LoginComponent implements OnInit {
           //this.errorService.dialogConfig = { ...this.dialogConfig };
           //this.errorService.handleError(error);
           console.log(error);
+          this.error = error;
         })
       );
   }
