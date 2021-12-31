@@ -20,6 +20,7 @@ export class LoginComponent implements OnInit {
   errorService: any;
   returnUrl: string;
   error = '';
+  loading = false;
 
   constructor(private authStatus: AuthStatusService , private route: ActivatedRoute, private router: Router ,private userService: UserService, private dialogRef: MatDialogRef<SuccessDialogComponent>,
               private dialog: MatDialog, private location: Location, @Inject(MAT_DIALOG_DATA) public data: any) {
@@ -58,7 +59,7 @@ export class LoginComponent implements OnInit {
   }
 
   public login = (loginFormValue) => {
-
+    this.loading = true;
     const loginDto: LoginDto = {
       name: loginFormValue.name,
       password: loginFormValue.password
@@ -66,6 +67,7 @@ export class LoginComponent implements OnInit {
 
     this.userService.login(loginDto)
       .subscribe(data => {
+        this.loading  = false;
         this.router.navigateByUrl(this.returnUrl);
       },
         (error => {
