@@ -22,8 +22,8 @@ export class NavComponent implements AfterViewInit {
   ];
 
   public navItems: NavItem[] = [
-    { route: "learner-dashboard", name: "Learner Dashboard" },
-    { route: "courses", name: "Courses" },
+    { route: "", name: "Home" },
+    { route: "learner-dashboard", name: "Learner Dashboard" }
   ];
 
   public logoutItems: NavItem[] = [

@@ -75,6 +75,7 @@ export class LoginComponent implements OnInit {
           //this.errorService.handleError(error);
           console.log(error);
           this.error = error;
+          this.loading  = false;
         })
       );
   }
