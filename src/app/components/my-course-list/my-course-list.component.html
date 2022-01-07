@@ -1,5 +1,7 @@
-<app-my-course *ngFor="let item of items | async" [item]="item"></app-my-course>
-
-<div *ngIf="(items | async).length === 0">
-    You're not registered to any of our courses!
+<div *ngIf="(items | async) as list; else elseBlock">
+    <app-my-course *ngFor="let item of list" [item]="item"></app-my-course>
 </div>
+
+<ng-template #elseBlock>
+<p>You're not registered to any of our courses</p>
+</ng-template>
