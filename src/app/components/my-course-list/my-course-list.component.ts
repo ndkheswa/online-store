@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
-import { SharedDataService } from 'src/app/services/shared-data.service';
+import { MyCoursesDataService } from 'src/app/services/my-courses-data.service';
 
 @Component({
   selector: 'app-my-course-list',
@@ -11,11 +11,12 @@ export class MyCourseListComponent implements OnInit {
 
   items: Observable<any[]>;
 
-  constructor(private sharedDataService: SharedDataService) { }
+  constructor(private myCoursesDataService: MyCoursesDataService) { }
 
   ngOnInit(): void {
-    this.sharedDataService.currentObject.subscribe( data => {
+    this.myCoursesDataService.currentObject.subscribe( data => {
       this.items = data;
+      console.log(data);
     });
   }
 

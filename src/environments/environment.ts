@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  apiRoot: 'https://backend.learncodingrsa.com:8443'
+  apiRoot: 'http://localhost:3000'
 };
 
 /*

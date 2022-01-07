@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Inject, Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { catchError, tap } from 'rxjs/operators';
 import { Course } from '../model/course';
 
 @Injectable({
@@ -13,6 +14,10 @@ export class CourseService {
   constructor(private http: HttpClient, @Inject('BASE_URL') baseUrl: string) { this.apiUrl = baseUrl }
 
   getAll(): Observable<Course[]> {
-    return this.http.get<Course[]>(this.apiUrl + '/courses');
+    return this.http.get<Course[]>(this.apiUrl + '/user');
+  }
+
+  getUserCourses(id: string): Observable<Course[]> {
+    return this.http.get<Course[]>(this.apiUrl + `/user/courses/${id}`);
   }
 }
