@@ -7,6 +7,7 @@ import { HomeComponent } from './components/home/home.component';
 import { LearnerDashboardComponent } from './components/learner-dashboard/learner-dashboard.component';
 import { LoginComponent } from './components/login/login.component';
 import { AuthGuard } from './components/shared/auth-guard';
+import { CourseDetailComponent } from './components/course-detail/course-detail.component';
 
 const routes: Routes = [
   {path: '', component: HomeComponent },
@@ -14,6 +15,7 @@ const routes: Routes = [
   {path: 'login', component: LoginComponent },
   {path: 'orders', component: OrderComponent },
   {path: 'search', component: OrderSearchComponent },
+  {path: 'course-detail', component: CourseDetailComponent },
   {path: 'learner-dashboard', component: LearnerDashboardComponent, canActivate: [AuthGuard] }
 
 ];

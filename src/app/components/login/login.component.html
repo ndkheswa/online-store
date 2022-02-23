@@ -1,5 +1,6 @@
 <div class="form-container">
   <mat-spinner diameter="70" *ngIf=loading></mat-spinner>
+  
   <div class="signup-form">
     <form [formGroup]="loginForm" autocomplete="off"  (ngSubmit)="login(loginForm.value)">
       <h2>Login</h2>
