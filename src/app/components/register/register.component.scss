@@ -44,6 +44,22 @@
     width: 300px;
     font-size:100%;
   }
+  .register-error {
+    background-color: #F9D7DA;
+    border-radius: 3px;
+    width: auto;
+    height: 40px;
+    text-align: center;
+    padding-top: 10px;
+  }
+  .register-ok{
+    background-color: #eaf9d7;
+    border-radius: 3px;
+    width: auto;
+    height: 40px;
+    text-align: center;
+    padding-top: 10px;
+  }
 }
 
   .mat-form-field .mat-form-field-infix {

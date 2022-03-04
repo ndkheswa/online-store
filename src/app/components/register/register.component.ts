@@ -2,6 +2,7 @@ import { Location } from '@angular/common';
 import { Component, Inject, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { MatDialogRef, MatDialog, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { Router } from '@angular/router';
 import { User } from 'src/app/model/user';
 import { UserService } from 'src/app/services/user.service';
 import { SuccessDialogComponent } from '../shared/success-dialog/success-dialog.component';
@@ -16,9 +17,19 @@ export class RegisterComponent implements OnInit {
   public registerForm: FormGroup;
   private dialogConfig;
   errorService: any;
+  error = "";
+  message = "";
 
-  constructor(private userService: UserService, private dialogRef: MatDialogRef<SuccessDialogComponent>,
-              private dialog: MatDialog, private location: Location, @Inject(MAT_DIALOG_DATA) public data: any) {}
+
+  constructor(
+    private userService: UserService,
+    private dialogRef: MatDialogRef<SuccessDialogComponent>,
+    private dialog: MatDialog,
+    private location: Location,
+    @Inject(MAT_DIALOG_DATA) public data: any) {
+
+    }
+
 
   ngOnInit(): void {
     this.registerForm = new FormGroup({
@@ -43,35 +54,41 @@ export class RegisterComponent implements OnInit {
     this.location.back();
   }
 
-  public registerClient = (registerFormValue) => {
-    if (this.registerForm.valid) {
-      this.register(registerFormValue);
-    }
-  }
+  // public registerClient = (registerFormValue) => {
+  //   if (this.registerForm.valid) {
+  //     this.register(registerFormValue);
+  //   }
+  // }
 
   public register = (registerFormValue) => {
 
     const user: User = {
       give_name: registerFormValue.fullname,
       family_name: registerFormValue.family_name,
-      name: registerFormValue.name,
+      username: registerFormValue.username,
       password: registerFormValue.password
     };
 
     this.userService.register(user)
       .subscribe(
-        result => {
-          this.dialogRef = this.dialog.open(SuccessDialogComponent, this.dialogConfig);
+        data => {
+          // this.dialogRef = this.dialog.open(SuccessDialogComponent, this.dialogConfig);
 
-          this.dialogRef.afterClosed()
-            .subscribe(() => {
-              this.location.go('/login');
-            });
-        },
-        (error => {
-          this.errorService.dialogConfig = { ...this.dialogConfig };
-          this.errorService.handleError(error);
-        })
+          this.message = `Welcome ${user.give_name}, Please check your email for confimation.`
+          console.log(this.message)
+          
+          // this.location.go('/login');
+
+          // this.dialogRef.afterClosed()
+          // .subscribe(() => {
+          //   });
+        },(
+          error => {
+            this.error = error
+            // this.errorService.dialogConfig = { ...this.dialogConfig };
+            // this.errorService.handleError(error);
+        }
+        )
       );
   }
 

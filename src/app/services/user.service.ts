@@ -37,9 +37,20 @@ export class UserService {
     };
   }
 
-  public register(user: User): Observable<User> {
-    return this.http.post<User>(this.apiUrl + '/auth/register', user, this.httpOptions);
+  // public register(user: User): Observable<User> {
+  //   return this.http.post<User>(this.apiUrl + '/auth/register', user, this.httpOptions)
+  //   // .pipe(map(newUser => {}))
+    
+  // }
+
+  public register(user: User) {
+    return this.http.post<User>(this.apiUrl + '/auth/register', user, this.httpOptions)
+    .pipe(map(newUser => {
+      console.log(newUser)
+    }))
+    
   }
+
 
   public login(userDto: LoginDto) {
     return this.http.post<any>(this.apiUrl + '/auth/login', userDto, this.httpOptions)

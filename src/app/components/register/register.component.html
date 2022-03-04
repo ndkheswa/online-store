@@ -23,4 +23,6 @@
   <div class="text">
     By signing up, you agree to Learncoding RSA's <a href="#">Terms of Service</a> & <a href="#">Privacy Policy</a>.
   </div>
+  <div class="register-error" *ngIf="error">{{ error.error.message }}</div>
+  <div class="register-ok" *ngIf="message">{{message}}</div>
 </div>

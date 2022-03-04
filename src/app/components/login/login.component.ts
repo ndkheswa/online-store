@@ -22,12 +22,19 @@ export class LoginComponent implements OnInit {
   error = '';
   loading = false;
 
-  constructor(private authStatus: AuthStatusService , private route: ActivatedRoute, private router: Router ,private userService: UserService, private dialogRef: MatDialogRef<SuccessDialogComponent>,
-              private dialog: MatDialog, private location: Location, @Inject(MAT_DIALOG_DATA) public data: any) {
-                if (this.userService.currentUserValue) {
-                  this.router.navigate(['learner-dashboard']);
-                }
-              }
+  constructor(
+    private authStatus: AuthStatusService ,
+    private route: ActivatedRoute,
+    private router: Router ,
+    private userService: UserService,
+    private dialogRef: MatDialogRef<SuccessDialogComponent>,
+    private dialog: MatDialog,
+    private location: Location,
+    @Inject(MAT_DIALOG_DATA) public data: any) {
+      if (this.userService.currentUserValue) {
+        this.router.navigate(['learner-dashboard']);
+      }
+    }
 
   ngOnInit(): void {
     this.loginForm = new FormGroup({
@@ -71,8 +78,8 @@ export class LoginComponent implements OnInit {
         this.router.navigateByUrl(this.returnUrl);
       },
         (error => {
-          //this.errorService.dialogConfig = { ...this.dialogConfig };
-          //this.errorService.handleError(error);
+          this.errorService.dialogConfig = { ...this.dialogConfig };
+          this.errorService.handleError(error);
           console.log(error);
           this.error = error;
           this.loading  = false;
