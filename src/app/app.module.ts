@@ -35,6 +35,8 @@ import { LoginComponent } from './components/login/login.component';
 import { SuccessDialogComponent } from './components/shared/success-dialog/success-dialog.component';
 import { ErrorDialogComponent } from './components/shared/error-dialog/error-dialog.component';
 import { CourseDetailComponent } from './components/course-detail/course-detail.component';
+import { MatDialogModule } from '@angular/material/dialog';
+import { EnrollDialogComponent } from './enroll-dialog/enroll-dialog.component';
 
 @NgModule({
   declarations: [
@@ -64,7 +66,8 @@ import { CourseDetailComponent } from './components/course-detail/course-detail.
     LoginComponent,
     SuccessDialogComponent,
     ErrorDialogComponent,
-    CourseDetailComponent
+    CourseDetailComponent,
+    EnrollDialogComponent
   ],
   imports: [
     HttpClientModule,
@@ -74,7 +77,8 @@ import { CourseDetailComponent } from './components/course-detail/course-detail.
     AppRoutingModule,
     BrowserAnimationsModule,
     MaterialModule,
-    MDBBootstrapModule.forRoot()
+    MDBBootstrapModule.forRoot(),
+    MatDialogModule
   ],
   providers: [
     { provide: 'BASE_URL', useValue: environment.apiRoot }

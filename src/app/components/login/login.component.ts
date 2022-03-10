@@ -78,8 +78,8 @@ export class LoginComponent implements OnInit {
         this.router.navigateByUrl(this.returnUrl);
       },
         (error => {
-          this.errorService.dialogConfig = { ...this.dialogConfig };
-          this.errorService.handleError(error);
+          // this.errorService.dialogConfig = { ...this.dialogConfig };
+          // this.errorService.handleError(error);
           console.log(error);
           this.error = error;
           this.loading  = false;
