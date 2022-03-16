@@ -1,9 +1,10 @@
 import { Location } from '@angular/common';
 import { Component, Inject, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
-import { MatDialogRef, MatDialog, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { MatDialogRef, MatDialog, MAT_DIALOG_DATA, MatDialogConfig } from '@angular/material/dialog';
 import { User } from 'src/app/model/user';
 import { UserService } from 'src/app/services/user.service';
+import { RegisterSuccessComponent } from '../shared/register-success/register-success.component';
 import { SuccessDialogComponent } from '../shared/success-dialog/success-dialog.component';
 
 @Component({
@@ -14,11 +15,10 @@ import { SuccessDialogComponent } from '../shared/success-dialog/success-dialog.
 export class RegisterComponent implements OnInit {
 
   public registerForm: FormGroup;
-  private dialogConfig;
-  errorService: any;
+  private dialogConfig = new MatDialogConfig();
 
-  constructor(private userService: UserService, private dialogRef: MatDialogRef<SuccessDialogComponent>,
-              private dialog: MatDialog, private location: Location, @Inject(MAT_DIALOG_DATA) public data: any) {}
+  constructor(private userService: UserService,
+              private dialog: MatDialog, private location: Location) {}
 
   ngOnInit(): void {
     this.registerForm = new FormGroup({
@@ -33,6 +33,7 @@ export class RegisterComponent implements OnInit {
       disableClose: true,
       data: {}
     };
+
   }
 
   public hasError = (controlName: string, errorName: string) => {
@@ -52,25 +53,25 @@ export class RegisterComponent implements OnInit {
   public register = (registerFormValue) => {
 
     const user: User = {
+      username: registerFormValue.username,
       give_name: registerFormValue.fullname,
-      family_name: registerFormValue.family_name,
-      name: registerFormValue.name,
+      family_name: registerFormValue.fullname,
+      name: registerFormValue.fullname,
       password: registerFormValue.password
     };
 
     this.userService.register(user)
       .subscribe(
         result => {
-          this.dialogRef = this.dialog.open(SuccessDialogComponent, this.dialogConfig);
+          const dialogRef = this.dialog.open(RegisterSuccessComponent, this.dialogConfig);
 
-          this.dialogRef.afterClosed()
+          dialogRef.afterClosed()
             .subscribe(() => {
               this.location.go('/login');
             });
         },
         (error => {
-          this.errorService.dialogConfig = { ...this.dialogConfig };
-          this.errorService.handleError(error);
+          console.log(error);
         })
       );
   }

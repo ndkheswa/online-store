@@ -35,6 +35,7 @@ import { LoginComponent } from './components/login/login.component';
 import { SuccessDialogComponent } from './components/shared/success-dialog/success-dialog.component';
 import { ErrorDialogComponent } from './components/shared/error-dialog/error-dialog.component';
 import { CourseDetailComponent } from './components/course-detail/course-detail.component';
+import { RegisterSuccessComponent } from './components/shared/register-success/register-success.component';
 
 @NgModule({
   declarations: [
@@ -64,7 +65,8 @@ import { CourseDetailComponent } from './components/course-detail/course-detail.
     LoginComponent,
     SuccessDialogComponent,
     ErrorDialogComponent,
-    CourseDetailComponent
+    CourseDetailComponent,
+    RegisterSuccessComponent
   ],
   imports: [
     HttpClientModule,
