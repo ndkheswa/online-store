@@ -17,6 +17,8 @@ export class RegisterComponent implements OnInit {
 
   public registerForm: FormGroup;
   private dialogConfig = new MatDialogConfig();
+  loading = false;
+  error = '';
 
   constructor(private userService: UserService, private router: Router,
               private dialog: MatDialog, private location: Location) {}
@@ -52,7 +54,7 @@ export class RegisterComponent implements OnInit {
   }
 
   public register = (registerFormValue) => {
-
+    this.loading = true;
     const user: User = {
       username: registerFormValue.username,
       email: registerFormValue.username,
@@ -65,6 +67,7 @@ export class RegisterComponent implements OnInit {
     this.userService.register(user)
       .subscribe(
         data => {
+          this.loading  = false;
           const dialogRef = this.dialog.open(RegisterSuccessComponent, this.dialogConfig);
           console.log(data);
 
@@ -75,7 +78,9 @@ export class RegisterComponent implements OnInit {
             });
         },
         (error => {
+          this.loading  = false;
           console.log(error);
+          this.error = error;
           //this.errorService.handleError(error);
         })
       );

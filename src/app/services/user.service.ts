@@ -14,10 +14,6 @@ export class UserService {
   currentUserSubject = new BehaviorSubject<any>(null);
   currentUser = new Observable;
 
-  httpOptions = {
-    headers: new HttpHeaders({'Content-Type': 'application/json'}),
-  };
-
   apiUrl: string;
 
   constructor(private http: HttpClient, private authStatus: AuthStatusService, @Inject('BASE_URL') baseUrl: string) {
@@ -38,11 +34,11 @@ export class UserService {
   }
 
   public register(user: User): Observable<User> {
-    return this.http.post<User>(this.apiUrl + '/auth/register', user, this.httpOptions);
+    return this.http.post<User>(this.apiUrl + '/auth/register', user);
   }
 
   public login(userDto: LoginDto) {
-    return this.http.post<any>(this.apiUrl + '/auth/login', userDto, this.httpOptions)
+    return this.http.post<any>(this.apiUrl + '/auth/login', userDto)
     .pipe(map(user => {
       localStorage.setItem('currentUser', JSON.stringify(user));
       this.currentUserSubject.next(user);

@@ -40,9 +40,17 @@
     }
   }
   .text {
-    margin: 10px 0 40px 56px;
+    margin: 10px 0 20px 56px;
     width: 300px;
     font-size:100%;
+  }
+  .register-error {
+    border-radius: 3px;
+    width: 600px;
+    color: red;
+    font-size: 14px;
+    font-weight: 400;
+    text-align: center;
   }
 }
 

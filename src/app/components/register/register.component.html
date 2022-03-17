@@ -1,26 +1,31 @@
 
 <div class="form-container">
-  <div class="signup-form">
-    <form [formGroup]="registerForm" autocomplete="off"  (ngSubmit)="register(registerForm.value)">
-      <h2>Sign up</h2>
-      <mat-form-field appearance="outline">
-        <input matInput placeholder="Full Name" formControlName="fullname">
-        <mat-icon matPrefix>person</mat-icon>
-      </mat-form-field>
-      <mat-form-field appearance="outline">
-        <mat-icon matPrefix>email_outline</mat-icon>
-        <input matInput placeholder="Email" formControlName="username" type="email">
-      </mat-form-field>
-      <mat-form-field appearance="outline">
-        <mat-icon matPrefix>lock</mat-icon>
-        <input matInput placeholder="Password" formControlName="password" type="password">
-      </mat-form-field>
-      <mat-card-actions>
-        <button mat-stroked-button [disabled]="!registerForm.valid">Start coding now</button>
-      </mat-card-actions>
-    </form>
-  </div>
-  <div class="text">
-    By signing up, you agree to Learncoding RSA's <a href="#">Terms of Service</a> & <a href="#">Privacy Policy</a>.
-  </div>
+  <mat-spinner diameter="70" *ngIf="loading; else signupForm"></mat-spinner>
+
+  <ng-template #signupForm>
+    <div class="signup-form">
+      <form [formGroup]="registerForm" autocomplete="off"  (ngSubmit)="register(registerForm.value)">
+        <h2>Sign up</h2>
+        <mat-form-field appearance="outline">
+          <input matInput placeholder="Full Name" formControlName="fullname">
+          <mat-icon matPrefix>person</mat-icon>
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+          <mat-icon matPrefix>email_outline</mat-icon>
+          <input matInput placeholder="Email" formControlName="username" type="email">
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+          <mat-icon matPrefix>lock</mat-icon>
+          <input matInput placeholder="Password" formControlName="password" type="password">
+        </mat-form-field>
+        <mat-card-actions>
+          <button mat-stroked-button [disabled]="!registerForm.valid">Start coding now</button>
+        </mat-card-actions>
+      </form>
+    </div>
+    <div class="text">
+      By signing up, you agree to Learncoding RSA's <a href="#">Terms of Service</a> & <a href="#">Privacy Policy</a>.
+    </div>
+    <div class="register-error" *ngIf="error">{{ error }}</div>
+  </ng-template>
 </div>

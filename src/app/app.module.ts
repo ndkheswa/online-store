@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -36,6 +36,8 @@ import { SuccessDialogComponent } from './components/shared/success-dialog/succe
 import { ErrorDialogComponent } from './components/shared/error-dialog/error-dialog.component';
 import { CourseDetailComponent } from './components/course-detail/course-detail.component';
 import { RegisterSuccessComponent } from './components/shared/register-success/register-success.component';
+import { AuthInterceptor } from './common/auth.interceptor';
+import { ErrorInterceptor } from './common/error.interceptor';
 
 @NgModule({
   declarations: [
@@ -79,7 +81,9 @@ import { RegisterSuccessComponent } from './components/shared/register-success/r
     MDBBootstrapModule.forRoot()
   ],
   providers: [
-    { provide: 'BASE_URL', useValue: environment.apiRoot }
+    { provide: 'BASE_URL', useValue: environment.apiRoot },
+    { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true },
+    { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true }
   ],
   bootstrap: [AppComponent]
 })
