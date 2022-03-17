@@ -2,6 +2,7 @@ import { Location } from '@angular/common';
 import { Component, Inject, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { MatDialogRef, MatDialog, MAT_DIALOG_DATA, MatDialogConfig } from '@angular/material/dialog';
+import { Router } from '@angular/router';
 import { User } from 'src/app/model/user';
 import { UserService } from 'src/app/services/user.service';
 import { RegisterSuccessComponent } from '../shared/register-success/register-success.component';
@@ -17,7 +18,7 @@ export class RegisterComponent implements OnInit {
   public registerForm: FormGroup;
   private dialogConfig = new MatDialogConfig();
 
-  constructor(private userService: UserService,
+  constructor(private userService: UserService, private router: Router,
               private dialog: MatDialog, private location: Location) {}
 
   ngOnInit(): void {
@@ -54,7 +55,8 @@ export class RegisterComponent implements OnInit {
 
     const user: User = {
       username: registerFormValue.username,
-      give_name: registerFormValue.fullname,
+      email: registerFormValue.username,
+      given_name: registerFormValue.fullname,
       family_name: registerFormValue.fullname,
       name: registerFormValue.fullname,
       password: registerFormValue.password
@@ -62,16 +64,19 @@ export class RegisterComponent implements OnInit {
 
     this.userService.register(user)
       .subscribe(
-        result => {
+        data => {
           const dialogRef = this.dialog.open(RegisterSuccessComponent, this.dialogConfig);
+          console.log(data);
 
           dialogRef.afterClosed()
             .subscribe(() => {
-              this.location.go('/login');
+              //this.location.go('/login');
+              this.router.navigate(['/login']);
             });
         },
         (error => {
           console.log(error);
+          //this.errorService.handleError(error);
         })
       );
   }
