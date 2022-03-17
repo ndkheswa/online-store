@@ -1,4 +1,4 @@
-<button [ngStyle]="{'background': getBackgroundColor() }" mat-button routerLink="/course-detail" [routerLinkActive]="['is-active']">
+<button [ngStyle]="{'background': getBackgroundColor() }" mat-button [routerLink]="['/course-detail', item.id]" [routerLinkActive]="['is-active']">
     <p [ngStyle]="{'background-color': getStatusColor() }">
       {{ item.status }}
     </p>
