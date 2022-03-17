@@ -5,7 +5,7 @@
     </button>
 
     <div fxFlex fxLayout fxLayoutAlign="flex-end">
-      <ul fxLayout fxLayoutGap="20px" class="navigation-items">
+      <ul fxLayout fxLayoutGap="10px" class="navigation-items">
         <div class="main-menu">
           <li fxHide.xs>
             <div>
@@ -31,9 +31,11 @@
         </div>
         
         <li fxHide.xs>
-          <button mat-button *ngIf="currentUser; else elseBlock" (click)="logout()">
-            Logout
-          </button>
+          <div class="logout-button">
+            <button mat-button *ngIf="currentUser; else elseBlock" (click)="logout()">
+              Logout
+            </button>
+          </div>
           <ng-template #elseBlock>
             <div class="login-button">
               <button mat-button (click)="showLoginForm()">

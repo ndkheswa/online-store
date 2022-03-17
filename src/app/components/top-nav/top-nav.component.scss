@@ -32,6 +32,19 @@ $toolbar-title-padding: 16px !default;
             background-color: #fff;
           }
         }
+        .logout-button {
+          button {
+            border: 1px solid #fff;
+            color: #021E4C;
+            background-color: #F7B600;
+            font-size: 16px;
+            font-weight: 300;
+          }
+          button:hover {
+            color: #1434CB;
+            background-color: #fff;
+          }
+        }
         .signup-button {
           button {
             border: 1px solid #fff;
