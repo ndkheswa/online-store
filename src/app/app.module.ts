@@ -41,6 +41,7 @@ import { ErrorInterceptor } from './common/error.interceptor';
 import { EnrollErrorDialogComponent } from './components/enroll-error-dialog/enroll-error-dialog.component';
 import { MyCourseDetailComponent } from './components/my-course-detail/my-course-detail.component';
 import { ChapterComponent } from './components/chapter/chapter.component';
+import { SectionComponent } from './components/section/section.component';
 
 @NgModule({
   declarations: [
@@ -74,7 +75,8 @@ import { ChapterComponent } from './components/chapter/chapter.component';
     RegisterSuccessComponent,
     EnrollErrorDialogComponent,
     MyCourseDetailComponent,
-    ChapterComponent
+    ChapterComponent,
+    SectionComponent
   ],
   imports: [
     HttpClientModule,

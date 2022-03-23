@@ -24,7 +24,7 @@
                 padding: 5px;
                 margin-left: 10px;
                 transform: rotate(-45deg);
-                -webkit-transform: rotate(-215deg);
+                -webkit-transform: rotate(-225deg);
               }
             .profile {
                 display: flex;
@@ -85,6 +85,20 @@
                     margin-bottom: 20px;
                     opacity: 0.3;
                 }
+            }
+        }
+    }
+    @media screen and (max-width: 600px) {
+        .main-section {
+            display: flex;
+            align-items: center;
+            .left {
+                display: flex;
+                width: 0%;
+            }
+            .right {
+                display: flex;
+                width: 100%;
             }
         }
     }
