@@ -24,7 +24,6 @@ export class CourseComponent implements OnInit {
   }
 
   getBackgroundColor() {
-    console.log('item: ', this.item.status);
     if (this.item.status === 'In progress') {
       return 'linear-gradient(0deg, #fff 60%, #AEE420 40%)';
     } else if (this.item.status === 'Not started')

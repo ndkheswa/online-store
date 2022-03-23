@@ -1,5 +1,5 @@
-<div *ngIf="(items | async) as list; else elseBlock">
-    <app-my-course *ngFor="let item of list" [item]="item"></app-my-course>
+<div  *ngIf="(items | async) as list; else elseBlock">
+    <app-my-course  *ngFor="let item of list" [item]="item"></app-my-course>
 </div>
 
 <ng-template #elseBlock>

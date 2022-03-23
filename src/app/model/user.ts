@@ -5,9 +5,11 @@ export interface User {
   name: string;
   password: string;
   email: string;
+  user_role: string 
 }
 
 export interface LoginDto {
   name: string;
   password: string;
+
 }
