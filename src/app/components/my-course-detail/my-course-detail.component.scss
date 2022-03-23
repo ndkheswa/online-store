@@ -59,71 +59,32 @@
 
     .main-section {
         display: flex;
-        flex-direction: column;
         align-items: center;
         background-color: #F9F8F8;
         width: 100%;
-        .content-area {
+        .left {
             display: flex;
-            flex-direction: row;
-            width:100%;
-            .left-main {
-                display: flex;
-                flex-direction: row;
-                width: 25%;
-                .course-list {
-                    display: flex;
-                    flex-direction: column;
-                    align-items: flex-start;
-                    width: 100%;
-                    margin: 20px 0;
-                    h1 {
-                        font-size: 18px;
-                        font-weight: 600;
-                    }
-                    app-my-course-list {
-                        width: 100%;
-                    }
-                    
-                    .course:hover {
-                        background-color: #f5f5f5;
-                        cursor: pointer;
-                    }
-                }
-            } 
-            @media screen and (max-width: 800px) {
-                .left-main {
-                    width: 100%;
-                }
-            }
-            .right-main {
-                display: flex;
-                width: 100%;
-                height: 100px;
-                justify-content: center;
-                .content-area {
-                    display: flex;
-                    width: 95%;
-                    height: 100px;
-                    .header-box {
-                        background-color:aqua;
-                        height: 80px;
-                    }
-                    h1 {
-                        font-size: 18px;
-                        font-weight: 600;
-                    }
-                }
-            }
-            @media screen and (max-width: 800px) {
-                .right-main {
-                    display: none;
-                }
-            }
+            width: 25%;
         }
-        @media screen and (max-width: 800px) {
+        .right {
+            display: flex;
+            width: 75%;
+            justify-content: center;
             .content-area {
-                width: 90%;
+                width: 95%;
+                h1 {
+                    font-size: large;
+                    font-weight: 500;
+                    margin: 20px;
+                }
+                .header-box {
+                    background-color: aqua;
+                    width: 100%;
+                    height: 35px;
+                    border-radius: 6px;
+                    margin-bottom: 20px;
+                    opacity: 0.3;
+                }
             }
         }
     }

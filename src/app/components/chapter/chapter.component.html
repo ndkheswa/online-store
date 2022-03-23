@@ -1,0 +1,8 @@
+<div class="main-container">
+    <div class="header-box">
+        <h1>Getting Started (30m)</h1>
+    </div>
+    <button *ngFor="let item of chapterList" mat-button>
+        <p>{{ item.id }}- {{ item.title }} ({{ item.duration }})</p>
+    </button>
+</div>
