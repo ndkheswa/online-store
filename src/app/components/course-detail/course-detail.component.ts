@@ -48,19 +48,6 @@ export class CourseDetailComponent implements OnInit {
     };
   }
 
-
-  /**
-   * enrol() {
-    let user = JSON.parse(localStorage.getItem('currentUser'))
-    console.log(user.idToken.payload.sub, this.courseId)
-    let req = this.courseService.enrollUser(user.idToken.payload.sub, this.courseId)
-    req.subscribe(data => {
-      console.log(data)
-      location.replace('/learner-dashboard')
-    })
-  }
-   */
-
   enroll() {
     this.loading = true;
     let user = JSON.parse(localStorage.getItem('currentUser'))

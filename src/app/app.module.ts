@@ -39,6 +39,7 @@ import { RegisterSuccessComponent } from './components/shared/register-success/r
 import { AuthInterceptor } from './common/auth.interceptor';
 import { ErrorInterceptor } from './common/error.interceptor';
 import { EnrollErrorDialogComponent } from './components/enroll-error-dialog/enroll-error-dialog.component';
+import { MyCourseDetailComponent } from './components/my-course-detail/my-course-detail.component';
 
 @NgModule({
   declarations: [
@@ -70,7 +71,8 @@ import { EnrollErrorDialogComponent } from './components/enroll-error-dialog/enr
     ErrorDialogComponent,
     CourseDetailComponent,
     RegisterSuccessComponent,
-    EnrollErrorDialogComponent
+    EnrollErrorDialogComponent,
+    MyCourseDetailComponent
   ],
   imports: [
     HttpClientModule,
