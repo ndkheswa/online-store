@@ -4,8 +4,8 @@
 
 export const environment = {
   production: false,
-  //apiRoot: 'http://localhost:3000'
-  apiRoot: 'https://backend.learncodingrsa.com:8443'
+  apiRoot: 'http://localhost:3000'
+  //apiRoot: 'https://backend.learncodingrsa.com:8443'
 };
 
 /*

@@ -3,6 +3,7 @@
           <h1>{{ item.title }} (30m)</h1>
      </div>
      <button *ngFor="let cItem of item.chapterList" mat-button>
-     <p>{{ cItem.id }}- {{ cItem.title }} ({{ cItem.duration }})</p>
-</button>
+          <mat-icon>ondemand_video</mat-icon>
+          <span class="video-text">{{ cItem.id }}- {{ cItem.title }} ({{ cItem.duration }})</span>
+     </button>
 </div>
