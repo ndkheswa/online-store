@@ -1,7 +1,9 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule,  } from '@angular/forms';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import {MatFormFieldModule} from "@angular/material/form-field"
+import { MatInputModule } from "@angular/material/input"
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -39,6 +41,8 @@ import { RegisterSuccessComponent } from './components/shared/register-success/r
 import { AuthInterceptor } from './common/auth.interceptor';
 import { ErrorInterceptor } from './common/error.interceptor';
 import { AdminDashboardComponent } from './components/admin-dashboard/admin-dashboard.component';
+
+
 
 @NgModule({
   declarations: [
@@ -80,7 +84,10 @@ import { AdminDashboardComponent } from './components/admin-dashboard/admin-dash
     AppRoutingModule,
     BrowserAnimationsModule,
     MaterialModule,
-    MDBBootstrapModule.forRoot()
+    MatFormFieldModule,
+    MatInputModule,
+    MDBBootstrapModule.forRoot(),
+
   ],
   providers: [
     { provide: 'BASE_URL', useValue: environment.apiRoot },
