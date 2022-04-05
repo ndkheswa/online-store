@@ -5,7 +5,7 @@ import { MyCoursesDataService } from 'src/app/services/my-courses-data.service';
 @Component({
   selector: 'app-my-course-list',
   templateUrl: './my-course-list.component.html',
-  styleUrls: ['./my-course-list.component.scss']
+  styleUrls: ['./my-course-list.component.scss'], 
 })
 export class MyCourseListComponent implements OnInit {
 
@@ -16,7 +16,6 @@ export class MyCourseListComponent implements OnInit {
   ngOnInit(): void {
     this.myCoursesDataService.currentObject.subscribe( data => {
       this.items = data;
-      console.log(data);
     });
   }
 

@@ -1,5 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
-
+import { Component, OnInit, Input} from '@angular/core';
 @Component({
   selector: 'app-my-course',
   templateUrl: './my-course.component.html',
@@ -12,7 +11,6 @@ export class MyCourseComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    console.log(this.item);
   }
 
   getBackgroundColor() {
