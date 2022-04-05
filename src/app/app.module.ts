@@ -1,7 +1,10 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule,  } from '@angular/forms';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import {MatFormFieldModule} from "@angular/material/form-field"
+import { MatInputModule } from "@angular/material/input"
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -42,6 +45,8 @@ import { EnrollErrorDialogComponent } from './components/enroll-error-dialog/enr
 import { MyCourseDetailComponent } from './components/my-course-detail/my-course-detail.component';
 import { ChapterComponent } from './components/chapter/chapter.component';
 import { SectionComponent } from './components/section/section.component';
+
+
 
 
 @NgModule({
@@ -88,7 +93,10 @@ import { SectionComponent } from './components/section/section.component';
     AppRoutingModule,
     BrowserAnimationsModule,
     MaterialModule,
-    MDBBootstrapModule.forRoot()
+    MatFormFieldModule,
+    MatInputModule,
+    MDBBootstrapModule.forRoot(),
+
   ],
   providers: [
     { provide: 'BASE_URL', useValue: environment.apiRoot },
