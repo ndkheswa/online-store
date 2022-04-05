@@ -41,6 +41,11 @@ import { RegisterSuccessComponent } from './components/shared/register-success/r
 import { AuthInterceptor } from './common/auth.interceptor';
 import { ErrorInterceptor } from './common/error.interceptor';
 import { AdminDashboardComponent } from './components/admin-dashboard/admin-dashboard.component';
+import { EnrollErrorDialogComponent } from './components/enroll-error-dialog/enroll-error-dialog.component';
+import { MyCourseDetailComponent } from './components/my-course-detail/my-course-detail.component';
+import { ChapterComponent } from './components/chapter/chapter.component';
+import { SectionComponent } from './components/section/section.component';
+
 
 
 
@@ -75,6 +80,10 @@ import { AdminDashboardComponent } from './components/admin-dashboard/admin-dash
     CourseDetailComponent,
     RegisterSuccessComponent,
     AdminDashboardComponent
+    EnrollErrorDialogComponent,
+    MyCourseDetailComponent,
+    ChapterComponent,
+    SectionComponent
   ],
   imports: [
     HttpClientModule,

@@ -1,0 +1,108 @@
+.main-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: none;
+    color: #2C2C2C;
+    .header-main {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        height: 80px;
+        border-bottom: 1px solid #DEDEDE;
+        background-color: #fff;
+        .header {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            display: flex;
+            width: 80%;
+            .arrow {
+                border: solid #F7B600;
+                border-width: 0 2px 2px 0;
+                display: inline-block;
+                padding: 5px;
+                margin-left: 10px;
+                transform: rotate(-45deg);
+                -webkit-transform: rotate(-225deg);
+              }
+            .profile {
+                display: flex;
+                align-items: center;
+                justify-content: flex-end;
+                display: flex;
+                width: 100%;
+                h1 {
+                    font-size: 18px;
+                    font-weight: 700;
+                    padding: 0;
+                    margin-bottom:0;
+                    margin-left: 20px;
+                }
+                img {
+                    border-radius: 50%;
+                    width: 60px;
+                    height: 60px;
+                    object-fit: cover;
+                }
+            }
+            @media screen and (max-width: 800px) {
+                .header {
+                    font-size: 16px;
+                    .profile {
+                        width: 60%;
+                    }
+                }
+            }
+        }
+    }
+
+    .main-section {
+        display: flex;
+        align-items: center;
+        background-color: #F9F8F8;
+        width: 100%;
+        .left {
+            display: flex;
+            width: 25%;
+        }
+        .right {
+            display: flex;
+            width: 75%;
+            justify-content: center;
+            .content-area {
+                width: 95%;
+                h1 {
+                    font-size: large;
+                    font-weight: 500;
+                    margin: 20px;
+                }
+                .header-box {
+                    background-color: aqua;
+                    width: 100%;
+                    height: 35px;
+                    border-radius: 6px;
+                    margin-bottom: 20px;
+                    opacity: 0.3;
+                }
+            }
+        }
+    }
+    @media screen and (max-width: 600px) {
+        .main-section {
+            display: flex;
+            align-items: center;
+            .left {
+                display: flex;
+                width: 0%;
+            }
+            .right {
+                display: flex;
+                width: 100%;
+            }
+        }
+    }
+
+}
+
+

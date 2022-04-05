@@ -9,6 +9,9 @@ import { LoginComponent } from './components/login/login.component';
 import { AuthGuard } from './components/shared/auth-guard';
 import { CourseDetailComponent } from './components/course-detail/course-detail.component';
 import { AdminDashboardComponent } from './components/admin-dashboard/admin-dashboard.component';
+import { MyCourseDetailComponent } from './components/my-course-detail/my-course-detail.component';
+import { ChapterComponent } from './components/chapter/chapter.component';
+
 
 const routes: Routes = [
   {path: '', component: HomeComponent },
@@ -19,7 +22,9 @@ const routes: Routes = [
   {path: 'course-detail/:id', component: CourseDetailComponent },
   {path: 'learner-dashboard', component: LearnerDashboardComponent, canActivate: [AuthGuard], data : {roles : ["Student"]} },
   {path: 'admin-dashboard', component: AdminDashboardComponent, canActivate: [AuthGuard], data : {roles : ["Admin"]} }
-
+  {path: 'my-course-detail/:id', component: MyCourseDetailComponent },
+  {path: 'chapter', component: ChapterComponent },
+  {path: 'learner-dashboard', component: LearnerDashboardComponent, canActivate: [AuthGuard] }
 ];
 
 @NgModule({

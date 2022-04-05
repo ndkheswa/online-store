@@ -1,25 +1,11 @@
 <div class="main-container">
-    <button mat-button>
+    <button mat-button [routerLink]="['/my-course-detail', item.id]" [routerLinkActive]="['is-active']">
         <span id="limit-size">
             <span [ngStyle]="{'background-color': getBackgroundColor() }" id="box">
                 <span [ngStyle]="{'background-color': getStatusColor() }" id="status-text"> {{ item.status }}</span>
             </span>
             <span id="main-text">{{ item.name }}</span>
+            <!-- <p>{{ item.description }} | 09h 40m</p> -->
         </span>
     </button>
 </div>
-
-<!--
-    <div class="course">
-    <div class="course-detail">
-        <button [ngStyle]="{'background-color': getStatusColor() }" class="status" mat-button routerLink="" [routerLinkActive]="['is-active']">
-            <p [ngStyle]="{'background-color': getBackgroundColor() }">{{ item.status }}</p>
-            
-        </button>
-        <div class="text">
-            <h2>{{ item.name }}</h2>
-            <p>{{ item.description }} | 09h 40m</p>
-        </div>
-    </div>
-</div>
--->
