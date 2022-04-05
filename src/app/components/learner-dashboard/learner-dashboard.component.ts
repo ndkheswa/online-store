@@ -28,7 +28,7 @@ export class LearnerDashboardComponent implements OnInit {
     this.sharedDataService.changeObject(this.allCourses$);
     this.myCoursesDataService.changeObject(this.myCourses$);
     this.myCourses$.subscribe( data => {
-      console.log(data);
+      // console.log(data);
     });
   }
 

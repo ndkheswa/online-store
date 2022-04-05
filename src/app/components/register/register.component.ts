@@ -20,6 +20,13 @@ export class RegisterComponent implements OnInit {
   loading = false;
   error = '';
 
+  Roles = {
+    student : "Student",
+    admin : "Admin"
+
+  }
+
+
   constructor(private userService: UserService, private router: Router,
               private dialog: MatDialog, private location: Location) {}
 
@@ -39,6 +46,8 @@ export class RegisterComponent implements OnInit {
 
   }
 
+  
+
   public hasError = (controlName: string, errorName: string) => {
     return this.registerForm.controls[controlName].hasError(errorName);
   }
@@ -49,11 +58,11 @@ export class RegisterComponent implements OnInit {
 
   public registerClient = (registerFormValue) => {
     if (this.registerForm.valid) {
-      this.register(registerFormValue);
+      this.register(registerFormValue, this.Roles.student);
     }
   }
-
-  public register = (registerFormValue) => {
+          
+  public register = (registerFormValue, userRole ) => {
     this.loading = true;
     const user: User = {
       username: registerFormValue.username,
@@ -61,7 +70,8 @@ export class RegisterComponent implements OnInit {
       given_name: registerFormValue.fullname,
       family_name: registerFormValue.fullname,
       name: registerFormValue.fullname,
-      password: registerFormValue.password
+      password: registerFormValue.password,
+      user_role : userRole
     };
 
     this.userService.register(user)
