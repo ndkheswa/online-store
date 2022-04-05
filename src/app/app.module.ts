@@ -2,7 +2,6 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -38,10 +37,12 @@ import { CourseDetailComponent } from './components/course-detail/course-detail.
 import { RegisterSuccessComponent } from './components/shared/register-success/register-success.component';
 import { AuthInterceptor } from './common/auth.interceptor';
 import { ErrorInterceptor } from './common/error.interceptor';
+import { AdminDashboardComponent } from './components/admin-dashboard/admin-dashboard.component';
 import { EnrollErrorDialogComponent } from './components/enroll-error-dialog/enroll-error-dialog.component';
 import { MyCourseDetailComponent } from './components/my-course-detail/my-course-detail.component';
 import { ChapterComponent } from './components/chapter/chapter.component';
 import { SectionComponent } from './components/section/section.component';
+
 
 @NgModule({
   declarations: [
@@ -73,6 +74,7 @@ import { SectionComponent } from './components/section/section.component';
     ErrorDialogComponent,
     CourseDetailComponent,
     RegisterSuccessComponent,
+    AdminDashboardComponent
     EnrollErrorDialogComponent,
     MyCourseDetailComponent,
     ChapterComponent,

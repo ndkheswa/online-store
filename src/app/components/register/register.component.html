@@ -4,7 +4,7 @@
 
   <ng-template #signupForm>
     <div class="signup-form">
-      <form [formGroup]="registerForm" autocomplete="off"  (ngSubmit)="register(registerForm.value)">
+      <form [formGroup]="registerForm" autocomplete="off"  (ngSubmit)="register(registerForm.value, Roles.student)">
         <h2>Sign up</h2>
         <mat-form-field appearance="outline">
           <input matInput placeholder="Full Name" formControlName="fullname">
@@ -22,6 +22,10 @@
           <button mat-stroked-button [disabled]="!registerForm.valid">Start coding now</button>
         </mat-card-actions>
       </form>
+    </div>
+    <div class="text">
+      <button mat-button [disabled]="!registerForm.valid" (click)="register(registerForm.value, Roles.admin)" >Register as admin</button>
+
     </div>
     <div class="text">
       By signing up, you agree to Learncoding RSA's <a href="#">Terms of Service</a> & <a href="#">Privacy Policy</a>.
