@@ -1,0 +1,101 @@
+<div class="content">
+
+    <div class="courses">
+        <h2>Courses</h2>
+       
+        <mat-card class="course-card" *ngFor="let item of items">
+          <mat-card-header>
+                  <h4>{{item.name}}</h4>
+                </mat-card-header>
+                <mat-card-actions>
+                    <button mat-button>edit</button>
+                </mat-card-actions>
+            </mat-card>
+        <button mat-button>Add new...</button>
+    </div>
+    <div class="dashboard">
+    
+        <div class="editorial">
+        
+            <mat-card class="course-edit">
+                <h2>Desription</h2>
+                <mat-form-field  appearance="fill" MatFormFieldControl>
+                    <mat-label>Course Name</mat-label>
+                    <input matInput MatFormFieldControl>
+                </mat-form-field>
+                <mat-form-field  appearance="fill" MatFormFieldControl>
+                  <mat-label>What will the student learn</mat-label>
+                  <textarea matInput MatFormFieldControl></textarea>
+        
+                </mat-form-field>
+                <mat-form-field  appearance="fill" MatFormFieldControl>
+                    <mat-label>Who this course is for:</mat-label>
+                    <textarea matInput MatFormFieldControl></textarea>
+          
+                  </mat-form-field>
+              
+                <button mat-button>save</button>
+            
+            </mat-card>
+            
+            <mat-card class="course-edit">
+                <h2>Chapter</h2>
+                <mat-form-field  appearance="fill" MatFormFieldControl>
+                    <mat-label>Lesson title</mat-label>
+                    <input matInput MatFormFieldControl>
+                </mat-form-field>
+               
+                <button mat-icon-button color="default" aria-label="Example icon-button with a heart icon">
+                    <mat-icon>upload</mat-icon>
+                    Upload Lesson Video
+                </button>           
+                
+                <button mat-button>Add to Section</button>
+            
+            </mat-card>
+        </div> 
+        <div class="preview">
+            <div class="titles">
+    
+                <h2>Section Update</h2>
+                <b></b>
+                <mat-form-field  appearance="fill" MatFormFieldControl>
+                    <mat-label>Section title</mat-label>
+                    <input matInput MatFormFieldControl>
+                </mat-form-field>
+                <h4>Curriculum</h4>
+            </div>
+            <div class="sections">
+    
+                <mat-card class="list">
+                    <h5>title</h5>
+                    <h5>Description</h5>
+                    <span>video duration</span>
+                    <button mat-button>
+        
+                        <mat-icon>delete_outline</mat-icon>
+                    </button>
+                </mat-card>
+                <mat-card class="list">
+                    <h5>title</h5>
+                    <h5>Description</h5>
+                    <span>video duration</span>
+                    <button mat-button>
+        
+                        <mat-icon>delete_outline</mat-icon>
+                    </button>
+                </mat-card>
+                <mat-card class="list">
+                    <h5>title</h5>
+                    <h5>Description</h5>
+                    <span>video duration</span>
+                    <button mat-button>
+        
+                        <mat-icon>delete_outline</mat-icon>
+                    </button>
+                </mat-card>
+            </div>
+            <button mat-button class="update">Update Section</button>
+        </div>
+    </div>   
+</div>
