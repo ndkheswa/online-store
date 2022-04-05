@@ -1,32 +1,22 @@
-<div class="main-container">
-    <div class="main-section">
-        <div class="course-title">
+<mat-spinner diameter="70" *ngIf="loading; else elseBlock"></mat-spinner>
 
-            <h1>{{courseDetail['name']}}</h1>
-            <p> We are going to make placeholder text great again. Greater than ever before.</p>
-
+<ng-template #elseBlock>
+    <div class="main-container">
+        <div class="main-section">
+            <div class="course-title">
+    
+                <h1>{{courseDetail['name']}}</h1>
+                <p> We are going to make placeholder text great again. Greater than ever before.</p>
+    
+            </div>
         </div>
+    
     </div>
-
-</div>
-<div class="more-details">
-
-    <div class="learn-content">
-        <h2>What you'll learn</h2>
-        <div class="learn-list">
-            <ul>
-                <li>I’m the best thing that ever happened to placeholder text</li>
-                <li>All of the words in Lorem Ipsum have flirted with me</li>
-                <li>I’m the best thing that ever happened to placeholder text</li>
-                <li> My placeholder text, is going to end up being very good with women</li>
-                <li>My text is long and beautiful, as, it has been well documented</li>
-            </ul>
-        </div>
-    </div>
-    <div class="row">
-
-        <div class="suitable-candidates">
-            <h2>Who is this course for?</h2>
+    <div class="more-details">
+    
+        <div class="learn-content">
+            <h2>What you'll learn</h2>
+            <div class="learn-list">
                 <ul>
                     <li>I’m the best thing that ever happened to placeholder text</li>
                     <li>All of the words in Lorem Ipsum have flirted with me</li>
@@ -34,41 +24,55 @@
                     <li> My placeholder text, is going to end up being very good with women</li>
                     <li>My text is long and beautiful, as, it has been well documented</li>
                 </ul>
+            </div>
         </div>
-
-        <div class="meta-description">
-            <div>
-                <mat-icon >timer</mat-icon>
-                <span>5 hours</span>
+        <div class="row">
+    
+            <div class="suitable-candidates">
+                <h2>Who is this course for?</h2>
+                    <ul>
+                        <li>I’m the best thing that ever happened to placeholder text</li>
+                        <li>All of the words in Lorem Ipsum have flirted with me</li>
+                        <li>I’m the best thing that ever happened to placeholder text</li>
+                        <li> My placeholder text, is going to end up being very good with women</li>
+                        <li>My text is long and beautiful, as, it has been well documented</li>
+                    </ul>
             </div>
-            <div>
-
-                <mat-icon>language</mat-icon>
-                <span>English</span>
+    
+            <div class="meta-description">
+                <div>
+                    <mat-icon >timer</mat-icon>
+                    <span>5 hours</span>
+                </div>
+                <div>
+    
+                    <mat-icon>language</mat-icon>
+                    <span>English</span>
+                </div>
+                <div>
+    
+                    <mat-icon>local_library</mat-icon>
+                    <span>Excrcise and solutions</span>
+                </div>
+                <div>
+    
+                    <mat-icon>video_library</mat-icon>
+                    <span>100 lessons</span>
+                </div>
+                <div>
+    
+                    <mat-icon>phonelink</mat-icon>
+                    <span>Access on any device</span>
+                </div>
+                <div>
+    
+                    <mat-icon>stars</mat-icon>
+                    <span>Certification of completion</span>
+                </div>
+    
             </div>
-            <div>
-
-                <mat-icon>local_library</mat-icon>
-                <span>Excrcise and solutions</span>
-            </div>
-            <div>
-
-                <mat-icon>video_library</mat-icon>
-                <span>100 lessons</span>
-            </div>
-            <div>
-
-                <mat-icon>phonelink</mat-icon>
-                <span>Access on any device</span>
-            </div>
-            <div>
-
-                <mat-icon>stars</mat-icon>
-                <span>Certification of completion</span>
-            </div>
-
         </div>
+        <button mat-button (click)="enroll()">Enroll now<i class="arrow"></i></button>
+    
     </div>
-    <button mat-button (click)="enrol()">Enroll now<i class="arrow"></i></button>
-
-</div>
+</ng-template>
