@@ -46,9 +46,6 @@ import { MyCourseDetailComponent } from './components/my-course-detail/my-course
 import { ChapterComponent } from './components/chapter/chapter.component';
 import { SectionComponent } from './components/section/section.component';
 
-
-
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -79,7 +76,7 @@ import { SectionComponent } from './components/section/section.component';
     ErrorDialogComponent,
     CourseDetailComponent,
     RegisterSuccessComponent,
-    AdminDashboardComponent
+    AdminDashboardComponent,
     EnrollErrorDialogComponent,
     MyCourseDetailComponent,
     ChapterComponent,
