@@ -21,7 +21,7 @@ const routes: Routes = [
   {path: 'search', component: OrderSearchComponent },
   {path: 'course-detail/:id', component: CourseDetailComponent },
   {path: 'learner-dashboard', component: LearnerDashboardComponent, canActivate: [AuthGuard], data : {roles : ["Student"]} },
-  {path: 'admin-dashboard', component: AdminDashboardComponent, canActivate: [AuthGuard], data : {roles : ["Admin"]} }
+  {path: 'admin-dashboard', component: AdminDashboardComponent, canActivate: [AuthGuard], data : {roles : ["Admin"]} },
   {path: 'my-course-detail/:id', component: MyCourseDetailComponent },
   {path: 'chapter', component: ChapterComponent },
   {path: 'learner-dashboard', component: LearnerDashboardComponent, canActivate: [AuthGuard] }
