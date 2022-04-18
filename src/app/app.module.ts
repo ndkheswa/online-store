@@ -79,7 +79,7 @@ import { SectionComponent } from './components/section/section.component';
     ErrorDialogComponent,
     CourseDetailComponent,
     RegisterSuccessComponent,
-    AdminDashboardComponent
+    AdminDashboardComponent,
     EnrollErrorDialogComponent,
     MyCourseDetailComponent,
     ChapterComponent,
