@@ -8,7 +8,7 @@
                   <h4>{{item.name}}</h4>
                 </mat-card-header>
                 <mat-card-actions>
-                    <button mat-button>edit</button>
+                    <button mat-button (click)="setCourseId(item.id)">edit</button>
                 </mat-card-actions>
             </mat-card>
         <button mat-button>Add new...</button>
@@ -39,63 +39,68 @@
             </mat-card>
             
             <mat-card class="course-edit">
-                <h2>Chapter</h2>
-                <mat-form-field  appearance="fill" MatFormFieldControl>
-                    <mat-label>Lesson title</mat-label>
-                    <input matInput MatFormFieldControl>
-                </mat-form-field>
-               
-                <button mat-icon-button color="default" aria-label="Example icon-button with a heart icon">
-                    <mat-icon>upload</mat-icon>
-                    Upload Lesson Video
-                </button>           
+                <h2>Section</h2>
+                    <mat-form-field  appearance="fill" MatFormFieldControl>
+                        <mat-label>Section title</mat-label>
+                        <input [ngModel]="sectionTitle" (keyup)="setTitle($event.target.value)" matInput MatFormFieldControl>
+                    </mat-form-field>
                 
-                <button mat-button>Add to Section</button>
+                <button mat-button (click)="createSection()">Create Section</button>
             
+            </mat-card>
+            <mat-card class="course-edit">
+                <h2>Chapter</h2>
+                <form [formGroup]="form" enctype="multipart/form-data" >
+                    <mat-form-field  appearance="fill" MatFormFieldControl>
+                        <mat-label>Lesson title</mat-label>
+                        <input name="title" [ngModel]="chapterTitle"
+                        (keyup)="setChapterTitle($event.target.value)"
+                        matInput MatFormFieldControl>
+                    </mat-form-field>
+                    <mat-form-field appearance="fill">
+                        <mat-label>Pick a section</mat-label>
+                        <!-- [disabled]="disableSelect.value" -->
+                        <mat-select [(value)]="currentSection">
+                            <mat-option name="section" *ngFor="let section of sections"  [value]="section.id">{{section.title}}</mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                    
+                    <button mat-icon-button  color="default" aria-label="Upload video button" (click)="fileInput.click()">
+                        <mat-icon>upload</mat-icon>
+                        <input type="file" name="file"
+                        accept="video/mp4,video/x-m4v,video/*" (change)="uploadFile($event)" hidden #fileInput>
+                        Upload Lesson Video
+                    </button>     
+                    
+                    <h6>
+                        {{fileName || "No file uploaded yet."}}
+                    </h6>
+                    
+                    <button mat-button (click)="createChapter()" >Add to Section</button>
+                </form>
             </mat-card>
         </div> 
         <div class="preview">
             <div class="titles">
     
-                <h2>Section Update</h2>
+                <h2>{{ currentCourse || "Course preview"}}</h2>
                 <b></b>
-                <mat-form-field  appearance="fill" MatFormFieldControl>
-                    <mat-label>Section title</mat-label>
-                    <input matInput MatFormFieldControl>
-                </mat-form-field>
-                <h4>Curriculum</h4>
+                
+                <h4>Sections</h4>
             </div>
-            <div class="sections">
-    
+            <div *ngFor="let section of sections" class="sections">
+                <h4>{{section?.title}}</h4>
                 <mat-card class="list">
                     <h5>title</h5>
                     <h5>Description</h5>
                     <span>video duration</span>
                     <button mat-button>
-        
-                        <mat-icon>delete_outline</mat-icon>
-                    </button>
-                </mat-card>
-                <mat-card class="list">
-                    <h5>title</h5>
-                    <h5>Description</h5>
-                    <span>video duration</span>
-                    <button mat-button>
-        
-                        <mat-icon>delete_outline</mat-icon>
-                    </button>
-                </mat-card>
-                <mat-card class="list">
-                    <h5>title</h5>
-                    <h5>Description</h5>
-                    <span>video duration</span>
-                    <button mat-button>
-        
                         <mat-icon>delete_outline</mat-icon>
                     </button>
                 </mat-card>
             </div>
-            <button mat-button class="update">Update Section</button>
+           
+            <button mat-button class="update">Save</button>
         </div>
     </div>   
 </div>
