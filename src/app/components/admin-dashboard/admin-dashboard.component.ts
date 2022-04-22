@@ -28,7 +28,7 @@ export class AdminDashboardComponent implements OnInit {
     private courseServise : CourseService,
   ) {
       this.form = this.fb.group({
-        video: [null]
+        file: [null]
       })
 
    }
@@ -85,17 +85,17 @@ export class AdminDashboardComponent implements OnInit {
 
  async uploadFile(e)  {
     
-  let file = (e.target as HTMLInputElement).files[0]  
+  let _file = (e.target as HTMLInputElement).files[0]  
   this.form.patchValue({
-    video : file
+    file : _file
   })
    
-    if(file) {
-      this.$uploadFile = file
-      this.fileName = file.name;
+    if(_file) {
+      this.$uploadFile = _file
+      this.fileName = _file.name;
       const video = await this.loadVideo(e.currentTarget.files[0])
       this.videoDuration = String(video)
-      this.form.get('video').updateValueAndValidity()
+      this.form.get("file").updateValueAndValidity()
     }
   }
 
@@ -113,7 +113,7 @@ export class AdminDashboardComponent implements OnInit {
         chapter,
         this.currentSection
       ).subscribe(chapter => {
-        formData.append('video', this.form.get('video').value)
+        formData.append("\"file\"", this.form.get("file").value)
         // formData.append('id', chapter.id)
         // this.formData.append("file", this.$uploadFile)
         // this.formData.append("\"file\"", this.$uploadFile, this.fileName) 
