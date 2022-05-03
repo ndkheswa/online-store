@@ -45,7 +45,8 @@ import { MatExpansionModule } from '@angular/material/expansion';
     MatNativeDateModule,
     MatTabsModule,
     MatSortModule,
-    MatExpansionModule
+    MatExpansionModule,
+    MatDialogModule
   ],
   exports: [
     FlexLayoutModule,
@@ -70,7 +71,8 @@ import { MatExpansionModule } from '@angular/material/expansion';
     MatNativeDateModule,
     MatTabsModule,
     MatSortModule,
-    MatExpansionModule
+    MatExpansionModule,
+    MatDialogModule
   ],
   providers: [
     { provide: MatDialogRef, useValue: {} },

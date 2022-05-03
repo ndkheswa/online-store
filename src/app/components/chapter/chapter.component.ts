@@ -7,7 +7,7 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class ChapterComponent implements OnInit {
 
-  @Input() item: any;  
+  @Input() item: any;
 
   constructor() { }
 

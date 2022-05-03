@@ -11,6 +11,7 @@ import { CourseDetailComponent } from './components/course-detail/course-detail.
 import { AdminDashboardComponent } from './components/admin-dashboard/admin-dashboard.component';
 import { MyCourseDetailComponent } from './components/my-course-detail/my-course-detail.component';
 import { ChapterComponent } from './components/chapter/chapter.component';
+import { ChapterDetailComponent } from './components/chapter-detail/chapter-detail.component';
 
 
 const routes: Routes = [
@@ -19,9 +20,10 @@ const routes: Routes = [
   {path: 'login', component: LoginComponent },
   {path: 'orders', component: OrderComponent },
   {path: 'search', component: OrderSearchComponent },
-  {path: 'course-detail/:id', component: CourseDetailComponent },
+  {path: 'course-detail/:id', component: CourseDetailComponent, canActivate: [AuthGuard], data : {roles : ["Student"]} },
+  {path: 'chapter-detail/:id', component: ChapterDetailComponent, canActivate: [AuthGuard], data : {roles : ["Student"]} },
   {path: 'learner-dashboard', component: LearnerDashboardComponent, canActivate: [AuthGuard], data : {roles : ["Student"]} },
-  {path: 'admin-dashboard', component: AdminDashboardComponent, canActivate: [AuthGuard], data : {roles : ["Admin"]} }
+  {path: 'admin-dashboard', component: AdminDashboardComponent, canActivate: [AuthGuard], data : {roles : ["Admin"]} },
   {path: 'my-course-detail/:id', component: MyCourseDetailComponent },
   {path: 'chapter', component: ChapterComponent },
   {path: 'learner-dashboard', component: LearnerDashboardComponent, canActivate: [AuthGuard] }

@@ -37,11 +37,12 @@ import { CourseDetailComponent } from './components/course-detail/course-detail.
 import { RegisterSuccessComponent } from './components/shared/register-success/register-success.component';
 import { AuthInterceptor } from './common/auth.interceptor';
 import { ErrorInterceptor } from './common/error.interceptor';
-import { AdminDashboardComponent } from './components/admin-dashboard/admin-dashboard.component';
 import { EnrollErrorDialogComponent } from './components/enroll-error-dialog/enroll-error-dialog.component';
 import { MyCourseDetailComponent } from './components/my-course-detail/my-course-detail.component';
 import { ChapterComponent } from './components/chapter/chapter.component';
 import { SectionComponent } from './components/section/section.component';
+import { AdminDashboardComponent } from './components/admin-dashboard/admin-dashboard.component';
+import { ChapterDetailComponent } from './components/chapter-detail/chapter-detail.component';
 
 
 @NgModule({
@@ -74,11 +75,11 @@ import { SectionComponent } from './components/section/section.component';
     ErrorDialogComponent,
     CourseDetailComponent,
     RegisterSuccessComponent,
-    AdminDashboardComponent
-    EnrollErrorDialogComponent,
     MyCourseDetailComponent,
     ChapterComponent,
-    SectionComponent
+    SectionComponent,
+    AdminDashboardComponent,
+    ChapterDetailComponent
   ],
   imports: [
     HttpClientModule,
