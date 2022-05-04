@@ -7,100 +7,10 @@
           <mat-card-header>
                   <h4>{{item.name}}</h4>
                 </mat-card-header>
-                <mat-card-actions>
-                    <button mat-button (click)="setCourseId(item.id)">edit</button>
+                <mat-card-actions align="end">
+                    <button mat-button [routerLink]="['/admin-dashboard', item.id]">edit</button>
                 </mat-card-actions>
             </mat-card>
-        <button mat-button>Add new...</button>
+            <button mat-button >Add new...</button>
     </div>
-    <div class="dashboard">
-    
-        <div class="editorial">
-        
-            <mat-card class="course-edit">
-                <h2>Desription</h2>
-                <mat-form-field  appearance="fill" MatFormFieldControl>
-                    <mat-label>Course Name</mat-label>
-                    <input matInput MatFormFieldControl>
-                </mat-form-field>
-                <mat-form-field  appearance="fill" MatFormFieldControl>
-                  <mat-label>What will the student learn</mat-label>
-                  <textarea matInput MatFormFieldControl></textarea>
-        
-                </mat-form-field>
-                <mat-form-field  appearance="fill" MatFormFieldControl>
-                    <mat-label>Who this course is for:</mat-label>
-                    <textarea matInput MatFormFieldControl></textarea>
-          
-                  </mat-form-field>
-              
-                <button mat-button>save</button>
-            
-            </mat-card>
-            
-            <mat-card class="course-edit">
-                <h2>Section</h2>
-                    <mat-form-field  appearance="fill" MatFormFieldControl>
-                        <mat-label>Section title</mat-label>
-                        <input [ngModel]="sectionTitle" (keyup)="setTitle($event.target.value)" matInput MatFormFieldControl>
-                    </mat-form-field>
-                
-                <button mat-button (click)="createSection()">Create Section</button>
-            
-            </mat-card>
-            <mat-card class="course-edit">
-                <h2>Chapter</h2>
-                <form [formGroup]="form" enctype="multipart/form-data" >
-                    <mat-form-field  appearance="fill" MatFormFieldControl>
-                        <mat-label>Lesson title</mat-label>
-                        <input name="title" [ngModel]="chapterTitle"
-                        (keyup)="setChapterTitle($event.target.value)"
-                        matInput MatFormFieldControl>
-                    </mat-form-field>
-                    <mat-form-field appearance="fill">
-                        <mat-label>Pick a section</mat-label>
-                        <!-- [disabled]="disableSelect.value" -->
-                        <mat-select [(value)]="currentSection">
-                            <mat-option name="section" *ngFor="let section of sections"  [value]="section.id">{{section.title}}</mat-option>
-                        </mat-select>
-                    </mat-form-field>
-                    
-                    <button mat-icon-button  color="default" aria-label="Upload video button" (click)="fileInput.click()">
-                        <mat-icon>upload</mat-icon>
-                        <input type="file" name="file"
-                        accept="video/mp4,video/x-m4v,video/*" (change)="uploadFile($event)" hidden #fileInput>
-                        Upload Lesson Video
-                    </button>     
-                    
-                    <h6>
-                        {{fileName || "No file uploaded yet."}}
-                    </h6>
-                    
-                    <button mat-button (click)="createChapter()" >Add to Section</button>
-                </form>
-            </mat-card>
-        </div> 
-        <div class="preview">
-            <div class="titles">
-    
-                <h2>{{ currentCourse || "Course preview"}}</h2>
-                <b></b>
-                
-                <h4>Sections</h4>
-            </div>
-            <div *ngFor="let section of sections" class="sections">
-                <h4>{{section?.title}}</h4>
-                <mat-card class="list">
-                    <h5>title</h5>
-                    <h5>Description</h5>
-                    <span>video duration</span>
-                    <button mat-button>
-                        <mat-icon>delete_outline</mat-icon>
-                    </button>
-                </mat-card>
-            </div>
-           
-            <button mat-button class="update">Save</button>
-        </div>
-    </div>   
 </div>

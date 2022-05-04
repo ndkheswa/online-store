@@ -4,9 +4,11 @@ import {
   HttpHandler,
   HttpEvent,
   HttpInterceptor,
-  HttpHeaders
+  HttpHeaders,
 } from '@angular/common/http';
 import { Observable } from 'rxjs';
+
+
 
 @Injectable()
 export class AuthInterceptor implements HttpInterceptor {
@@ -16,19 +18,22 @@ export class AuthInterceptor implements HttpInterceptor {
   intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
     
     const idToken = localStorage.getItem("currentUser");
+    const getJwt = JSON.parse(idToken).idToken
 
-        if (idToken) {
-            const cloned = request.clone({
-                headers: request.headers.set("Authorization",
-                    "Bearer " + idToken)
-                    .set("Content-Type", "application/json")
-            });
 
-            return next.handle(cloned);
-        }
-        else {
-            return next.handle(request);
-        }
+
+    if (idToken) {
+        const cloned = request.clone({
+            headers: request.headers.set("Authorization",
+                "Bearer " + getJwt.jwtToken)
+                .set("Content-Type", "application/json")
+        });
+
+        return next.handle(cloned);
+    }
+    else {
+        return next.handle(request);
+    }
 
   }
 }

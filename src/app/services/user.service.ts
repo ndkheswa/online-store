@@ -1,8 +1,8 @@
-import { CurrencyPipe } from '@angular/common';
-import { HttpHeaders, HttpClient } from '@angular/common/http';
+import { CurrencyPipe, JsonPipe } from '@angular/common';
+import { HttpHeaders, HttpClient, HttpBackend, HttpRequest } from '@angular/common/http';
 import { Inject, Injectable } from '@angular/core';
 import { BehaviorSubject, Observable, of } from 'rxjs';
-import { map } from 'rxjs/operators';
+import { map, skip } from 'rxjs/operators';
 import { LoginDto, User } from '../model/user';
 import { AuthStatusService } from './auth-status.service';
 
@@ -16,7 +16,7 @@ export class UserService {
 
   apiUrl: string;
 
-  constructor(private http: HttpClient, private authStatus: AuthStatusService, @Inject('BASE_URL') baseUrl: string) {
+  constructor(private http: HttpClient, private httpBackend: HttpBackend, private authStatus: AuthStatusService, @Inject('BASE_URL') baseUrl: string) {
     this.apiUrl = baseUrl;
     this.currentUserSubject.next(JSON.parse(localStorage.getItem('currentUser')));
     this.currentUser = this.currentUserSubject.asObservable();
@@ -33,16 +33,18 @@ export class UserService {
     };
   }
 
-  public register(user: User): Observable<User> {
-    return this.http.post<User>(this.apiUrl + '/auth/register', user);
+  public register(user: User) {
+    return this.httpBackend.handle(new HttpRequest('POST',this.apiUrl + '/auth/register', user ))
   }
 
   public login(userDto: LoginDto) {
-    return this.http.post<any>(this.apiUrl + '/auth/login', userDto)
-    .pipe(map(user => {
-      localStorage.setItem('currentUser', JSON.stringify(user));
-      this.currentUserSubject.next(user);
-    }));
+    return this.httpBackend.handle(new HttpRequest('POST',this.apiUrl + '/auth/login', userDto )).pipe(map(response => {
+      let obj = JSON.stringify(response)
+      let user = JSON.parse(obj)
+      localStorage.setItem('currentUser', JSON.stringify(user.body));
+      this.currentUserSubject.next(user.body);
+    }))
+    
   }
 
   public logout() {
