@@ -1,0 +1,76 @@
+:host {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  
+
+.course-edit {
+    margin: 20px;
+    display: flex;
+    flex-direction: column;
+    width: 700px;
+    height: auto;
+    background-color: rgba(253, 253, 253, 0.856);
+    backdrop-filter: blur(5px);
+    box-shadow: 5px 5px 10px rgba(231, 231, 231, 0.63) inset,
+    -5px -5px 25px rgba(201, 201, 201, 0.219)  inset;
+}
+
+.dashboard {
+    display: flex;
+
+}
+
+.editorial {
+    display: flex;
+    flex-direction : column;
+    justify-content: space-between;
+    flex: 1;
+    border: 1px solid rgba(128, 128, 128, 0.055);
+
+    margin: 20px;
+    background-color: rgb(253, 253, 253);
+    backdrop-filter: blur(5px);
+    box-shadow: 5px 5px 10px rgba(231, 231, 231, 0.63) ,
+    -5px 5px 10px rgba(26, 26, 26, 0.37)  ;
+}
+
+.preview {
+    border: 1px solid rgba(128, 128, 128, 0.055);
+    width: 800px; 
+    
+    margin: 20px;
+    padding: 20px;
+    background-color: rgb(253, 253, 253);
+    backdrop-filter: blur(5px);
+    box-shadow: 5px 5px 10px rgba(102, 102, 102, 0.39) ,
+    -5px 5px 10px rgba(231, 231, 231, 0.63)  ;
+}
+
+.list{
+  display: flex;
+  
+  justify-content: space-between;
+  padding: 10px;  
+  margin-bottom: 10px;
+  box-shadow: 5px 5px 10px rgba(231, 231, 231, 0.63) ,
+  -5px 5px 10px rgba(255, 255, 255, 0.37)  ;
+
+}
+
+// ¯\_(ツ)_/¯
+
+.update {
+   margin-top: auto;
+}
+
+.sections {
+    padding: 20px;
+    background-color: rgba(253, 253, 253, 0.856);
+    backdrop-filter: blur(5px);
+    box-shadow: 5px 5px 10px rgba(231, 231, 231, 0.63) inset,
+    -5px -5px 25px rgba(201, 201, 201, 0.219)  inset;
+    margin-bottom: 10px;
+}

@@ -11,8 +11,8 @@ import { CourseDetailComponent } from './components/course-detail/course-detail.
 import { AdminDashboardComponent } from './components/admin-dashboard/admin-dashboard.component';
 import { MyCourseDetailComponent } from './components/my-course-detail/my-course-detail.component';
 import { ChapterComponent } from './components/chapter/chapter.component';
-
-
+import { EditCourseComponent } from './components/edit-course/edit-course.component';
+ 
 const routes: Routes = [
   {path: '', component: HomeComponent },
   {path: 'register', component: RegisterComponent },
@@ -22,9 +22,11 @@ const routes: Routes = [
   {path: 'course-detail/:id', component: CourseDetailComponent },
   {path: 'learner-dashboard', component: LearnerDashboardComponent, canActivate: [AuthGuard], data : {roles : ["Student"]} },
   {path: 'admin-dashboard', component: AdminDashboardComponent, canActivate: [AuthGuard], data : {roles : ["Admin"]} },
+  {path: 'admin-dashboard/:id', component: EditCourseComponent, canActivate: [AuthGuard], data : {roles : ["Admin"]} },
   {path: 'my-course-detail/:id', component: MyCourseDetailComponent },
   {path: 'chapter', component: ChapterComponent },
-  {path: 'learner-dashboard', component: LearnerDashboardComponent, canActivate: [AuthGuard] }
+  {path: 'learner-dashboard', component: LearnerDashboardComponent, canActivate: [AuthGuard] },
+
 ];
 
 @NgModule({
